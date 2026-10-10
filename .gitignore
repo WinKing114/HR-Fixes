@@ -1,0 +1,7 @@
+.runtime/
+__pycache__/
+*.py[cod]
+*.class
+*.jar
+*.zip
+quality/2026-10-10-performance/release/

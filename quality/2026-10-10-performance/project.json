@@ -1,0 +1,9 @@
+{
+  "name": "HR Fixes",
+  "mod_id": "hollowrealm_performance_compat",
+  "version": "1.0.1-rc.1",
+  "minecraft": "1.20.1",
+  "forge_tested": "47.4.16",
+  "target_file": "EternalStarlight-0.9.0-hotfix.jar",
+  "target_sha256": "6f3bfb62c887723c593973dfe325992d4886a3dbfd1a8a05d26829fc5aeb4096"
+}
