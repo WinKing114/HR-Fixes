@@ -22,7 +22,7 @@ See [build instructions](quality/2026-10-10-performance/BUILD.md), [source](qual
 
 ## Validation and release status
 
-The **1.0.1-rc.1** candidate was tested in an isolated Hollow Realm client with the original 264 JARs. Real attachment updates and deletion, death/respawn, dimension changes, full client restart and same-process world reload passed. Independent source rebuilding produced the same candidate JAR.
+The **1.0.0-rc.1** candidate was tested in an isolated Hollow Realm client with the original 264 JARs. Real attachment updates and deletion, death/respawn, dimension changes, full client restart and same-process world reload passed. Independent source rebuilding produced the same candidate JAR.
 
 These checks do not establish long-term stability, complete Eternal Starlight feature coverage, or external dedicated-server reconnect behavior. No FPS, TPS or memory improvement is claimed.
 
