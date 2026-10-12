@@ -26,6 +26,8 @@ def main():
         'net/minecraft/client/1.20.1-20230612.114412/client-1.20.1-20230612.114412-srg.jar',
         'net/minecraftforge/forge/1.20.1-47.4.16/forge-1.20.1-47.4.16-client.jar',
         'net/minecraftforge/javafmllanguage/1.20.1-47.4.16/javafmllanguage-1.20.1-47.4.16.jar',
+        'net/minecraftforge/fmlloader/1.20.1-47.4.16/fmlloader-1.20.1-47.4.16.jar',
+        'org/ow2/asm/asm-tree/9.5/asm-tree-9.5.jar',
         'org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar',
         'net/minecraftforge/forge/1.20.1-47.4.16/forge-1.20.1-47.4.16-universal.jar',
         'com/mojang/datafixerupper/6.0.8/datafixerupper-6.0.8.jar',
