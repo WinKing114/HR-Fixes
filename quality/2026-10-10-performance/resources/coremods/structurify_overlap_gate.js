@@ -1,5 +1,5 @@
 // CoO 4.6/6.5's runtime toggle cannot prevent descriptor validation against Structurify 2.0.42.
-// Optional exact-version dependencies in mods.toml bound this workaround.
+// Target versions are checked per Mixin at runtime, not enforced as loading dependencies.
 function initializeCoreMod() {
     var Opcodes = Java.type('org.objectweb.asm.Opcodes');
     var InsnList = Java.type('org.objectweb.asm.tree.InsnList');
