@@ -1,4 +1,6 @@
-# HR Fixes 1.0.1-rc.1 审查
+# HR Fixes 1.0.1-rc.1 历史审查
+
+后续 1.1.0-rc.1 的新增兼容修复和验收见 [COMPATIBILITY.md](COMPATIBILITY.md)；以下保留当时版本的验证范围。
 
 范围：实际安装的 Minecraft 1.20.1 / Forge 47.4.16 / `EternalStarlight-0.9.0-hotfix.jar`。目标二进制哈希见 `project.json`。发布候选的两个类与历史私有 1.0.0 编译结果逐字节一致；本轮未修改修复源码。
 

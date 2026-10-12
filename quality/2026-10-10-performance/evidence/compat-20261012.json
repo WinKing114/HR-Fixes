@@ -1,0 +1,101 @@
+{
+  "version": "1.1.0",
+  "date": "2026-10-12",
+  "status": "READY_WITH_DOCUMENTED_LIMITS",
+  "jar_sha256": "5e54a04932690473aaeee5e49c9383c579580ec243ffb34b97a069c0d17593cc",
+  "formal_inventory": 268,
+  "validation_inventory": 268,
+  "checks": {
+    "current_inventory_without_test_mod": "PASS",
+    "final_jar_is_installed_in_validation": "PASS",
+    "final_native_save_and_shutdown": "PASS",
+    "original_quest_npe_absent": "PASS",
+    "intelligent_parse_error_absent": "PASS",
+    "socketing_jei_error_absent": "PASS",
+    "no_patch_injection_failure": "PASS",
+    "rare_gem_jei_focus_displayed": "PASS",
+    "valid_description_network_refresh": "PASS",
+    "late_reply_after_close": "PASS",
+    "native_edit_confirmation": "PASS",
+    "native_smithing_consumes_inputs": "PASS",
+    "current_mana_effect": "PASS",
+    "es_true_false_remove": "PASS",
+    "progress_rewards_and_socket_nbt_survive_restart": "PASS",
+    "filename_embedded_and_source_versions_match": "PASS",
+    "only_own_classes": "PASS",
+    "no_qa_or_data_override_in_jar": "PASS",
+    "original_three_java_patches_byte_identical": "PASS",
+    "coo_gate_logic_preserved": "PASS",
+    "client_ui_patches_isolated": "PASS",
+    "gem_numeric_values_and_other_fields_preserved": "PASS",
+    "current_third_party_inventory_unchanged": "PASS",
+    "independent_extracted_source_rebuild_identical": "PASS"
+  },
+  "independent_rebuild": "PASS",
+  "tested_optional_mods": {
+    "collections_of_optimizations": {
+      "version": "6.5",
+      "file": "collections_of_optimizations-6.5-all.jar",
+      "sha256": "1373bd0e8801425dea778b46652ccd18d1f111becd99b80193e216012eaab275"
+    },
+    "structurify": {
+      "version": "2.0.42",
+      "file": "structurify-forge-2.0.42+mc1.20.1.jar",
+      "sha256": "1ee266c3044f92c9723290de98639e934ad56ee662eae02d422eeed901ad963d"
+    },
+    "goetyawaken": {
+      "version": "1.3.9.4",
+      "file": "[诡厄巫法：觉醒] goetyawaken-1.3.9.4.jar",
+      "sha256": "5e875b353187b0efab5b0ec1849e6312b49b751f3fcdab767d3a6c57b2a16ead"
+    },
+    "goetyominous": {
+      "version": "3.0.0.fix-1.20.1",
+      "file": "goetyominous-3.0.0.fix-1.20.1.jar",
+      "sha256": "4b5b267f5f1a4706845e81fc7193ef011c94614324af645a6f21bd17a74e2860"
+    },
+    "ftbquests": {
+      "version": "2001.4.22",
+      "file": "[FTB 任务] ftb-quests-forge-2001.4.22.jar",
+      "sha256": "9ea9d159a78a2724cfe0457b024680fdb52a2126eff9cfa5280a30578f647a68"
+    },
+    "quest_enhance": {
+      "version": "1.20.1-forge-3.13",
+      "file": "quest_enhance-1.20.1-forge-3.13.jar",
+      "sha256": "60d4e20fad2478309e26b1c5b9d8518d7853e5f1710a47e00ab54a7808e1e7b2"
+    },
+    "apotheosis": {
+      "version": "7.4.8",
+      "file": "[神化] Apotheosis-1.20.1-7.4.8.jar",
+      "sha256": "5ed8c17cf62837bb649d1054e3e4fe93c4d9bdec98fe9f332e2637a260da30da"
+    },
+    "jei": {
+      "version": "15.56.0.205",
+      "file": "[JEI物品管理器] jei-1.20.1-forge-15.56.0.205.jar",
+      "sha256": "6b251e60a4719c874da89d750af97aa6498f6f4475e3ae79cb1288c7bf0cb65c"
+    },
+    "arcane_convergence": {
+      "version": "1.0.0bugfix",
+      "file": "[奥法归一] arcane_convergence-1.0.0bugfix-all.jar",
+      "sha256": "fa7f8ce9bebea6412598c7d6d26c9b6a203981f7712b44f0f4aeb763ceeac885"
+    },
+    "ars_nouveau": {
+      "version": "4.12.7",
+      "file": "[新生魔艺] ars_nouveau-1.20.1-4.12.7-all.jar",
+      "sha256": "1f1debc282a0c379c1141f2840ea294eede6f6b544c589663f40bbe17b59a1af"
+    }
+  },
+  "limitations": [
+    "Dedicated server NOT_TESTED",
+    "Production personal saves NOT_TESTED",
+    "Long-term stability NOT_TESTED",
+    "Absent-target combinations NOT_TESTED",
+    "JEI uses representative equipment examples"
+  ],
+  "unchanged_diagnostics": [
+    "Unused celestial_ranged category and ancient primary-rule affix warnings",
+    "Reserved ANCIENT-specific pool missing; native weight 0",
+    "Aquamirae/Forge biome access-transform conflict",
+    "Other unconfirmed resource/structure/entity warnings",
+    "137-second stall root cause unresolved"
+  ]
+}

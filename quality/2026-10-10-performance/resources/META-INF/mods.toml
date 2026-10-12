@@ -7,7 +7,7 @@ version="@VERSION@"
 displayName="HR Fixes"
 authors="Hollow Realm contributors"
 displayTest="IGNORE_SERVER_VERSION"
-description="Targeted compatibility and bug fixes for the Hollow Realm modpack. Third-party client attachment synchronization fix; not an official Eternal Starlight release."
+description="Targeted Hollow Realm compatibility fixes: Eternal Starlight attachments, Structurify/CoO overlap, Goety worldgen random access, quest panel lifecycle, and Apotheosis socketing display. Independent third-party project."
 [[dependencies.hollowrealm_performance_compat]]
 modId="forge"
 mandatory=true
@@ -25,4 +25,52 @@ modId="eternal_starlight"
 mandatory=true
 versionRange="[0.9.0]"
 ordering="AFTER"
+side="CLIENT"
+[[dependencies.hollowrealm_performance_compat]]
+modId="collections_of_optimizations"
+mandatory=false
+versionRange="[4.6],[6.5]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.hollowrealm_performance_compat]]
+modId="structurify"
+mandatory=false
+versionRange="[2.0.42]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.hollowrealm_performance_compat]]
+modId="goetyawaken"
+mandatory=false
+versionRange="[1.3.9.4]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.hollowrealm_performance_compat]]
+modId="goetyominous"
+mandatory=false
+versionRange="[3.0.0.fix-1.20.1]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.hollowrealm_performance_compat]]
+modId="ftbquests"
+mandatory=false
+versionRange="[2001.4.22]"
+ordering="NONE"
+side="CLIENT"
+[[dependencies.hollowrealm_performance_compat]]
+modId="quest_enhance"
+mandatory=false
+versionRange="[1.20.1-forge-3.13]"
+ordering="NONE"
+side="CLIENT"
+[[dependencies.hollowrealm_performance_compat]]
+modId="apotheosis"
+mandatory=false
+versionRange="[7.4.8]"
+ordering="NONE"
+side="CLIENT"
+[[dependencies.hollowrealm_performance_compat]]
+modId="jei"
+mandatory=false
+versionRange="[15.56.0.205]"
+ordering="NONE"
 side="CLIENT"

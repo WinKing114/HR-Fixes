@@ -2,42 +2,26 @@
 
 Targeted compatibility and bug fixes for the Hollow Realm modpack.
 
-An independent, third-party project for **Minecraft 1.20.1 / Forge 47.4.16**. It is not an official Eternal Starlight release.
+**Current Beta candidate: 1.1.0 — Minecraft 1.20.1 / Forge 47.4.16.**
 
-## Current fix
+An independent third-party project, not an official Eternal Starlight release. The stable mod ID is `hollowrealm_performance_compat`.
 
-Restore Eternal Starlight Forge client attachment synchronization when its Forge packet wrapper passes a null player reference. HR Fixes supplies the current local player on the client main thread and preserves the original entity lookup and attachment decoding. Packets without a local player are discarded, with no cross-world replay queue.
+- Eternal Starlight client attachment handling.
+- The audited Collections Of Optimizations 4.6/6.5 and Structurify 2.0.42 overlap injection.
+- Goety Awaken/Ominous worldgen random-source access.
+- FTB Quests 2001.4.22 and Quest Enhance 3.13 empty-panel lifecycle.
+- Apotheosis 7.4.8 and JEI 15.56.0.205 socketing display.
 
-Requires **EternalStarlight-0.9.0-hotfix.jar**, internal mod version **0.9.0**. Other binaries sharing that version require a new compatibility review. Servers do not need HR Fixes.
+Replace the previous HR Fixes JAR while the game is closed; install only one copy of the mod ID. The separate intelligent-gem data correction under `overrides/kubejs/data/` belongs to the audited Hollow Realm setup and is **not bundled in the JAR**. It retains existing numeric values.
 
-## Build
+[Build instructions](quality/2026-10-10-performance/BUILD.md) · [Changelog](quality/2026-10-10-performance/CHANGELOG.md) · [Validation and limitations](quality/2026-10-10-performance/RELEASE-1.1.0.md) · [CurseForge handoff](quality/2026-10-10-performance/CURSEFORGE.md)
 
-The existing source layout and Python/javac build are retained. Compile dependencies are supplied locally; no third-party JARs or assets are bundled.
+Validated with the current Hollow Realm client and integrated server. Dedicated servers and long-term stability are NOT_TESTED. No FPS/TPS/memory improvement is claimed. Quest identities, rewards/progress, equipment balance, save formats and structure-generation rules are preserved. See the validation report for existing warnings that were investigated and left unchanged.
 
-```powershell
-python .code/performance/build_patch.py --libraries "C:/path/to/.minecraft/libraries" --eternal-starlight "C:/path/to/EternalStarlight-0.9.0-hotfix.jar" --javac "C:/path/to/jdk-17/bin/javac.exe"
-```
+## Source layout
 
-See [build instructions](quality/2026-10-10-performance/BUILD.md), [source](quality/2026-10-10-performance/src/hollowrealm/performance/mixin/AttachmentClientMixin.java), and [candidate metadata](quality/2026-10-10-performance/project.json).
-
-## Validation and release status
-
-The **1.0.0-rc.1** candidate was tested in an isolated Hollow Realm client with the original 264 JARs. Real attachment updates and deletion, death/respawn, dimension changes, full client restart and same-process world reload passed. Independent source rebuilding produced the same candidate JAR.
-
-These checks do not establish long-term stability, complete Eternal Starlight feature coverage, or external dedicated-server reconnect behavior. No FPS, TPS or memory improvement is claimed.
-
-See the [audit](quality/2026-10-10-performance/AUDIT.md) and [validation record](quality/2026-10-10-performance/evidence/hr-fixes-review.json). Historical deployment scripts, diagnostic scripts, test worlds and raw logs are not included in this standalone source repository.
-
-## Installation
-
-Install one HR Fixes JAR in the client's `mods` folder and restart Minecraft. Replace any earlier private 1.0.0 copy, including `HR Fixes-1.0.0.jar` or `hollowrealm-performance-compat-1.0.0.jar`: all use the stable mod ID `hollowrealm_performance_compat` and must not coexist.
-
-Close Minecraft before removal. HR Fixes adds no world content and performs no save migration. Removing it with the affected dependency restores the original synchronization failure.
-
-## Publishing
-
-CurseForge project **1736729** has been created by the owner. Candidate files have not been publicly uploaded by this workflow; public submission remains subject to the owner's confirmation and project artwork/field review. [Publication materials](quality/2026-10-10-performance/CURSEFORGE.md).
+`quality/2026-10-10-performance/` remains the maintained project. `.code/performance/build_patch.py` builds Java 17 bytecode from local audited compile dependencies. Source packages contain no dependency JARs, personal saves, launcher credentials or raw game logs.
 
 ## License
 
-[MIT](LICENSE), Copyright (c) 2026 Hollow Realm contributors. Eternal Starlight remains a separate dependency; its code and assets are not distributed here.
+MIT for HR Fixes. Attribution for the companion data definition is retained in `overrides/NOTICE.md`.
