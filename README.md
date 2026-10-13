@@ -2,26 +2,18 @@
 
 Targeted compatibility and bug fixes for the Hollow Realm modpack.
 
-**Current Beta candidate: 1.1.0 — Minecraft 1.20.1 / Forge 47.4.16.**
+**Current Beta candidate: 1.1.1-rc.1 — Minecraft 1.20.1 / Forge 47.4.16 / Java 21 runtime.**
 
-An independent third-party project, not an official Eternal Starlight release. The stable mod ID is `hollowrealm_performance_compat`.
+Independent third-party project, not an official Eternal Starlight release. Stable mod ID: `hollowrealm_performance_compat`.
 
-- Eternal Starlight client attachment handling.
-- The audited Collections Of Optimizations 4.6/6.5 and Structurify 2.0.42 overlap injection.
-- Goety Awaken/Ominous worldgen random-source access.
-- FTB Quests 2001.4.22 and Quest Enhance 3.13 empty-panel lifecycle.
-- Apotheosis 7.4.8 and JEI 15.56.0.205 socketing display.
+Only Minecraft and Forge are loading dependencies. Missing or unaudited third-party targets skip their patches instead of blocking startup. Audited optional patches cover Eternal Starlight attachments, CoO/Structurify overlap injection, Goety worldgen random-source access, Quest Enhance empty-panel lifecycle and Apotheosis/JEI socketing display. Structurify 2.0.43 and 2.0.42 were tested.
 
-Replace the previous HR Fixes JAR while the game is closed; install only one copy of the mod ID. The separate intelligent-gem data correction under `overrides/kubejs/data/` belongs to the audited Hollow Realm setup and is **not bundled in the JAR**. It retains existing numeric values.
+Replace the previous HR Fixes JAR while Minecraft is closed; install only one copy of the mod ID. Patch activation boundaries do not require installing those target mods. The separate intelligent-gem data correction under `overrides/kubejs/data/` is unchanged and is not bundled in the JAR.
 
-[Build instructions](quality/2026-10-10-performance/BUILD.md) · [Changelog](quality/2026-10-10-performance/CHANGELOG.md) · [Validation and limitations](quality/2026-10-10-performance/RELEASE-1.1.0.md) · [CurseForge handoff](quality/2026-10-10-performance/CURSEFORGE.md)
+[Build](quality/2026-10-10-performance/BUILD.md) · [Changelog](quality/2026-10-10-performance/CHANGELOG.md) · [Validation and limitations](quality/2026-10-10-performance/RELEASE-1.1.1-rc.1.md) · [CurseForge handoff](quality/2026-10-10-performance/CURSEFORGE.md)
 
-Validated with the current Hollow Realm client and integrated server. Dedicated servers and long-term stability are NOT_TESTED. No FPS/TPS/memory improvement is claimed. Quest identities, rewards/progress, equipment balance, save formats and structure-generation rules are preserved. See the validation report for existing warnings that were investigated and left unchanged.
+Native client and minimal dedicated-server loading passed five optional-target combinations each. Full modpack dedicated-server gameplay, multiplayer and long-term stability remain NOT_TESTED. No performance improvement is claimed. Quest content, rewards, equipment balance, save formats and structure rules are unchanged by HR Fixes.
 
-## Source layout
+The existing source layout and Python/javac builder remain. The source package was independently extracted and rebuilt byte-for-byte against the candidate. No dependency JAR, QA mod, personal save, launcher account or raw game log is included.
 
-`quality/2026-10-10-performance/` remains the maintained project. `.code/performance/build_patch.py` builds Java 17 bytecode from local audited compile dependencies. Source packages contain no dependency JARs, personal saves, launcher credentials or raw game logs.
-
-## License
-
-MIT for HR Fixes. Attribution for the companion data definition is retained in `overrides/NOTICE.md`.
+MIT for HR Fixes; companion data attribution is retained in `overrides/NOTICE.md`.

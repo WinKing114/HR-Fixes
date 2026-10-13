@@ -5,8 +5,10 @@ import java.util.Set;
 import net.minecraftforge.fml.loading.LoadingModList;
 import net.minecraftforge.fml.loading.moddiscovery.ModInfo;
 import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.ClassReader;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
+import org.spongepowered.asm.service.MixinService;
 
 /**
  * A patch is only used on the specific target implementation it was audited
@@ -30,23 +32,52 @@ public final class HRFixesMixinPlugin implements IMixinConfigPlugin {
         return false;
     }
 
+    public static boolean shouldDisableStructurifyOverlap() {
+        return (tested("collections_of_optimizations", "4.6") || tested("collections_of_optimizations", "6.5"))
+            && (tested("structurify", "2.0.42") || tested("structurify", "2.0.43"));
+    }
+
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+        boolean enabled = compatible(targetClassName, mixinClassName);
+        System.getLogger("HR Fixes").log(System.Logger.Level.INFO,
+                (enabled ? "APPLY " : "SKIP ") + mixinClassName);
+        return enabled;
+    }
+
+    private static boolean method(String target, String name, String descriptor) {
+        // Read original bytes: the bytecode provider would run other transformers
+        // while Mixin is still registering targets, causing premature class loading.
+        try (java.io.InputStream stream = MixinService.getService().getResourceAsStream(target.replace('.', '/') + ".class")) {
+            if (stream == null) return false;
+            ClassNode node = new ClassNode();
+            new ClassReader(stream).accept(node, ClassReader.SKIP_CODE | ClassReader.SKIP_DEBUG | ClassReader.SKIP_FRAMES);
+            return node.methods.stream().anyMatch(m -> name.equals(m.name) && descriptor.equals(m.desc));
+        } catch (java.io.IOException missing) {
+            return false;
+        }
+    }
+
+    private static boolean compatible(String targetClassName, String mixinClassName) {
         String mixin = mixinClassName.substring(mixinClassName.lastIndexOf('.') + 1);
         switch (mixin) {
             case "AttachmentClientMixin":
-                return tested("eternal_starlight", "0.9.0");
+                return tested("eternal_starlight", "0.9.0")
+                    && method(targetClassName, "handle", "(Lnet/minecraft/world/entity/player/Player;)V");
             case "SorcererWorldgenRandomMixin":
-                return tested("goetyawaken", "1.3.9.4");
+                return tested("goetyawaken", "1.3.9.4") && method(targetClassName, "generateOffers", "()V");
             case "ZealotWorldgenRandomMixin":
-                return tested("goetyominous", "3.0.0.fix-1.20.1");
+                return tested("goetyominous", "3.0.0.fix-1.20.1")
+                    && method(targetClassName, "populateDefaultEquipmentSlots", "(Lnet/minecraft/world/DifficultyInstance;)V");
             case "QuestPanelLifecycleMixin":
                 return tested("ftbquests", "2001.4.22")
-                    && tested("quest_enhance", "1.20.1-forge-3.13");
+                    && tested("quest_enhance", "1.20.1-forge-3.13") && method(targetClassName, "addWidgets", "()V");
             case "ApotheosisJeiMixin":
-            case "SocketingJeiLayoutMixin":
                 return tested("apotheosis", "7.4.8")
                     && tested("jei", "15.56.0.205");
+            case "SocketingJeiLayoutMixin":
+                return tested("apotheosis", "7.4.8") && tested("jei", "15.56.0.205")
+                    && method(targetClassName, "setRecipe", "(Lmezz/jei/api/gui/builder/IRecipeLayoutBuilder;Lnet/minecraft/world/item/crafting/SmithingRecipe;Lmezz/jei/api/recipe/IFocusGroup;)V");
             default:
                 return false;
         }

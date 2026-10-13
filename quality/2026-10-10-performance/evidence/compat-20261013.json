@@ -1,0 +1,372 @@
+{
+  "version": "1.1.1-rc.1",
+  "date": "2026-10-13",
+  "status": "READY_WITH_DOCUMENTED_LIMITS",
+  "jar_sha256": "0b272bbf80fcd5a0ac99ba90f156752cb362bc5ce07432531ad0829b32bedd8f",
+  "checks": {
+    "client_five_native_load_cases": "PASS",
+    "client-accepted2-none_final_binary": "PASS",
+    "client-accepted2-none_no_injection_or_linkage_failure": "PASS",
+    "client-accepted2-42_final_binary": "PASS",
+    "client-accepted2-42_no_injection_or_linkage_failure": "PASS",
+    "client-accepted2-43_final_binary": "PASS",
+    "client-accepted2-43_no_injection_or_linkage_failure": "PASS",
+    "client-accepted2-no-struct_final_binary": "PASS",
+    "client-accepted2-no-struct_no_injection_or_linkage_failure": "PASS",
+    "client-accepted2-no-coo_final_binary": "PASS",
+    "client-accepted2-no-coo_no_injection_or_linkage_failure": "PASS",
+    "server_five_native_load_cases": "PASS",
+    "server-accepted-none_final_binary": "PASS",
+    "server-accepted-none_no_injection_or_linkage_failure": "PASS",
+    "server-accepted-42_final_binary": "PASS",
+    "server-accepted-42_no_injection_or_linkage_failure": "PASS",
+    "server-accepted-43_final_binary": "PASS",
+    "server-accepted-43_no_injection_or_linkage_failure": "PASS",
+    "server-accepted-no-struct_final_binary": "PASS",
+    "server-accepted-no-struct_no_injection_or_linkage_failure": "PASS",
+    "server-accepted-no-coo_final_binary": "PASS",
+    "server-accepted-no-coo_no_injection_or_linkage_failure": "PASS",
+    "shipping_inventory_without_qa": "PASS",
+    "all_six_mixins_activated": "PASS",
+    "final_native_save_and_shutdown": "PASS",
+    "no_target_regression": "PASS",
+    "goety_main_and_worker": "PASS",
+    "coo_only_target_gate": "PASS",
+    "es_actual_network": "PASS",
+    "quest_description_and_editor": "PASS",
+    "actual_socketing_and_mana": "PASS",
+    "jei_focus_after_restart": "PASS",
+    "task_wallet_and_equipment_nbt_preserved": "PASS",
+    "warp_recipes_loaded": "PASS",
+    "core_only_dependencies": "PASS",
+    "filename_embedded_source_match": "PASS",
+    "own_classes_only": "PASS",
+    "no_qa_or_third_party_jar": "PASS",
+    "original_logic_classes_preserved": "PASS",
+    "production_third_party_unchanged": "PASS",
+    "production_quest_sources_unchanged": "PASS",
+    "isolated_quest_sources_present": "PASS",
+    "independent_extracted_source_rebuild_identical": "PASS"
+  },
+  "load_matrix": {
+    "client": [
+      {
+        "case": "client-accepted2-none",
+        "status": "PASS",
+        "native_markers": [
+          "[HRLOAD] STRUCTURIFY_ABSENT",
+          "[HRLOAD] SERVER_STARTED CLIENT",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen",
+          "[HRLOAD] CLIENT_WORLD_READY"
+        ]
+      },
+      {
+        "case": "client-accepted2-42",
+        "status": "PASS",
+        "native_markers": [
+          "[16:25:04] [main/INFO] [ne.mi.co.Co.hollowrealm_performance_compat/COREMODLOG]: HR Fixes: installed optional version gate for only the CoO Structurify overlap mixin.",
+          "[HRLOAD] STRUCTURIFY_CLASS_LOADED",
+          "[HRLOAD] SERVER_STARTED CLIENT",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen",
+          "[HRLOAD] CLIENT_WORLD_READY"
+        ]
+      },
+      {
+        "case": "client-accepted2-43",
+        "status": "PASS",
+        "native_markers": [
+          "[16:25:24] [main/INFO] [ne.mi.co.Co.hollowrealm_performance_compat/COREMODLOG]: HR Fixes: installed optional version gate for only the CoO Structurify overlap mixin.",
+          "[HRLOAD] STRUCTURIFY_CLASS_LOADED",
+          "[HRLOAD] SERVER_STARTED CLIENT",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen",
+          "[HRLOAD] CLIENT_WORLD_READY"
+        ]
+      },
+      {
+        "case": "client-accepted2-no-struct",
+        "status": "PASS",
+        "native_markers": [
+          "[16:25:43] [main/INFO] [ne.mi.co.Co.hollowrealm_performance_compat/COREMODLOG]: HR Fixes: installed optional version gate for only the CoO Structurify overlap mixin.",
+          "[HRLOAD] STRUCTURIFY_ABSENT",
+          "[HRLOAD] SERVER_STARTED CLIENT",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen",
+          "[HRLOAD] CLIENT_WORLD_READY"
+        ]
+      },
+      {
+        "case": "client-accepted2-no-coo",
+        "status": "PASS",
+        "native_markers": [
+          "[HRLOAD] STRUCTURIFY_CLASS_LOADED",
+          "[HRLOAD] SERVER_STARTED CLIENT",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+          "[HRLOAD] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen",
+          "[HRLOAD] CLIENT_WORLD_READY"
+        ]
+      }
+    ],
+    "server": [
+      {
+        "case": "server-accepted-none",
+        "status": "PASS",
+        "native_markers": [
+          "[HRLOAD] STRUCTURIFY_ABSENT",
+          "[HRLOAD] SERVER_STARTED DEDICATED_SERVER"
+        ]
+      },
+      {
+        "case": "server-accepted-42",
+        "status": "PASS",
+        "native_markers": [
+          "[16:23:52] [main/INFO] [ne.mi.co.Co.hollowrealm_performance_compat/COREMODLOG]: HR Fixes: installed optional version gate for only the CoO Structurify overlap mixin.",
+          "[HRLOAD] STRUCTURIFY_CLASS_LOADED",
+          "[HRLOAD] SERVER_STARTED DEDICATED_SERVER"
+        ]
+      },
+      {
+        "case": "server-accepted-43",
+        "status": "PASS",
+        "native_markers": [
+          "[16:24:11] [main/INFO] [ne.mi.co.Co.hollowrealm_performance_compat/COREMODLOG]: HR Fixes: installed optional version gate for only the CoO Structurify overlap mixin.",
+          "[HRLOAD] STRUCTURIFY_CLASS_LOADED",
+          "[HRLOAD] SERVER_STARTED DEDICATED_SERVER"
+        ]
+      },
+      {
+        "case": "server-accepted-no-struct",
+        "status": "PASS",
+        "native_markers": [
+          "[16:24:26] [main/INFO] [ne.mi.co.Co.hollowrealm_performance_compat/COREMODLOG]: HR Fixes: installed optional version gate for only the CoO Structurify overlap mixin.",
+          "[HRLOAD] STRUCTURIFY_ABSENT",
+          "[HRLOAD] SERVER_STARTED DEDICATED_SERVER"
+        ]
+      },
+      {
+        "case": "server-accepted-no-coo",
+        "status": "PASS",
+        "native_markers": [
+          "[HRLOAD] STRUCTURIFY_CLASS_LOADED",
+          "[HRLOAD] SERVER_STARTED DEDICATED_SERVER"
+        ]
+      }
+    ]
+  },
+  "frame_comparison": {
+    "baseline": {
+      "label": "baseline",
+      "frames": 48019,
+      "mean_ms": 0.6257945292488375,
+      "p50_ms": 0.5617,
+      "p95_ms": 0.8062,
+      "p99_ms": 1.8912
+    },
+    "candidate": {
+      "label": "candidate",
+      "frames": 51421,
+      "mean_ms": 0.5843855487057853,
+      "p50_ms": 0.5414,
+      "p95_ms": 0.727,
+      "p99_ms": 1.5826
+    }
+  },
+  "spark_analysis": {
+    "profile": "Ilj6JTtMg6",
+    "sha256": "4bff13f6acda68a38702663c536f4dd8e14aaffd183be96ba7e6c9c4a0e3fc5c",
+    "duration_ms": 1725240,
+    "threads": [
+      "Render thread"
+    ],
+    "interval_us": 4000,
+    "sampled_ms": 1725224.0,
+    "exclusive_buckets_percent": {
+      "Other": 23.8332,
+      "Minecraft": 12.0284,
+      "OpenGL/GLFW/JNI": 53.1667,
+      "FancyMenu": 0.0927,
+      "Forge events": 4.5643,
+      "Lodestone": 0.3023,
+      "Embeddium": 4.8244,
+      "ImmediatelyFast": 1.1488,
+      "Oculus": 0.0392
+    },
+    "top_self": [
+      {
+        "class": "org.lwjgl.system.JNI",
+        "method": "invokePV",
+        "self_ms": 212420.0,
+        "self_percent": 12.3126
+      },
+      {
+        "class": "org.lwjgl.opengl.GL32C",
+        "method": "nglMultiDrawElementsBaseVertex",
+        "self_ms": 42520.0,
+        "self_percent": 2.4646
+      },
+      {
+        "class": "org.lwjgl.opengl.GL30C",
+        "method": "glBlitFramebuffer",
+        "self_ms": 39924.0,
+        "self_percent": 2.3141
+      },
+      {
+        "class": "me.jellysquid.mods.sodium.client.render.immediate.model.BakedModelEncoder",
+        "method": "writeQuadVertices",
+        "self_ms": 28344.0,
+        "self_percent": 1.6429
+      },
+      {
+        "class": "org.lwjgl.opengl.GL32C",
+        "method": "glFenceSync",
+        "self_ms": 28116.0,
+        "self_percent": 1.6297
+      },
+      {
+        "class": "me.jellysquid.mods.sodium.client.render.chunk.DefaultChunkRenderer",
+        "method": "fillCommandBuffer",
+        "self_ms": 26608.0,
+        "self_percent": 1.5423
+      },
+      {
+        "class": "org.lwjgl.opengl.GL11C",
+        "method": "glClear",
+        "self_ms": 17540.0,
+        "self_percent": 1.0167
+      },
+      {
+        "class": "org.lwjgl.opengl.GL30C",
+        "method": "glBindFramebuffer",
+        "self_ms": 16724.0,
+        "self_percent": 0.9694
+      },
+      {
+        "class": "org.lwjgl.opengl.GL30C",
+        "method": "glBindFramebuffer",
+        "self_ms": 14720.0,
+        "self_percent": 0.8532
+      },
+      {
+        "class": "net.minecraftforge.eventbus.ASMEventHandler",
+        "method": "invoke",
+        "self_ms": 12744.0,
+        "self_percent": 0.7387
+      },
+      {
+        "class": "org.lwjgl.opengl.GL30C",
+        "method": "glBindFramebuffer",
+        "self_ms": 12484.0,
+        "self_percent": 0.7236
+      },
+      {
+        "class": "org.lwjgl.system.JNI",
+        "method": "callPPV",
+        "self_ms": 12120.0,
+        "self_percent": 0.7025
+      }
+    ],
+    "interpretation": "Native OpenGL/GLFW samples may include GPU/driver waits. Inclusive wrappers are not exclusive mod cost. No server thread is present. No rendering defect proven."
+  },
+  "server_analysis": {
+    "duration_ms": 12952,
+    "threads": [
+      "Server thread"
+    ],
+    "top_self": [
+      {
+        "class": "jdk.internal.misc.Unsafe",
+        "method": "park",
+        "self_ms": 9904.0,
+        "self_percent": 76.467
+      },
+      {
+        "class": "jdk.internal.misc.Unsafe",
+        "method": "park",
+        "self_ms": 1404.0,
+        "self_percent": 10.84
+      },
+      {
+        "class": "net.minecraftforge.eventbus.ASMEventHandler",
+        "method": "invoke",
+        "self_ms": 116.0,
+        "self_percent": 0.8956
+      },
+      {
+        "class": "net.minecraft.server.level.ServerChunkCache",
+        "method": "m_8489_",
+        "self_ms": 52.0,
+        "self_percent": 0.4015
+      },
+      {
+        "class": "net.minecraft.server.level.ServerChunkCache",
+        "method": "m_8490_",
+        "self_ms": 40.0,
+        "self_percent": 0.3088
+      },
+      {
+        "class": "net.minecraft.server.MinecraftServer",
+        "method": "m_129961_",
+        "self_ms": 36.0,
+        "self_percent": 0.2779
+      },
+      {
+        "class": "jdk.internal.misc.Unsafe",
+        "method": "park",
+        "self_ms": 24.0,
+        "self_percent": 0.1853
+      },
+      {
+        "class": "java.lang.StackTraceElement",
+        "method": "initStackTraceElements",
+        "self_ms": 24.0,
+        "self_percent": 0.1853
+      },
+      {
+        "class": "net.minecraft.server.MinecraftServer",
+        "method": "m_130011_",
+        "self_ms": 24.0,
+        "self_percent": 0.1853
+      },
+      {
+        "class": "java.lang.invoke.DirectMethodHandle$Holder",
+        "method": "newInvokeSpecial",
+        "self_ms": 20.0,
+        "self_percent": 0.1544
+      }
+    ],
+    "statistics": "# me.lucko.spark.proto.SparkProtos$PlatformStatistics$Tps@5d821ea6\nlast15_m: 19.73207847861371\nlast1_m: 19.230210291147355\nlast5_m: 19.841165616099268\n# me.lucko.spark.proto.SparkProtos$PlatformStatistics$Mspt@7e1daf08\nlast1_m {\n  max: 17.5674\n  mean: 0.8899386666666667\n  median: 0.7461\n  min: 0.4802\n  percentile95: 1.544\n}\nlast5_m {\n  max: 281.1838\n  mean: 0.8474542333333334\n  median: 0.6924\n  min: 0.4017\n  percentile95: 1.3537\n}\n{}",
+    "scenario": "Isolated flat world; explicit /reload, no QA regression command during final capture",
+    "interpretation": "Most samples are scheduling/waiting, not effective CPU. Original three lag warnings immediately followed resource reloads. No sustained tick CPU bottleneck demonstrated; original worldgen/entity load not reproduced."
+  },
+  "save_inspection": {
+    "date": "2026-10-13",
+    "mode": "READ_ONLY",
+    "scope": "Overworld region/entities plus playerdata/data; other dimensions NOT_TESTED",
+    "files": 33,
+    "chunks": 2569,
+    "remaining_target_references": {},
+    "pre_removal_backup": "NOT_LOCATED",
+    "data_loss_comparison": "NOT_TESTED; registry IDs alone do not prove placed blocks or held items"
+  },
+  "independent_rebuild": "PASS",
+  "curseforge": "NOT_SUBMITTED_OWNER_UPLOAD",
+  "limitations": [
+    "Full modpack dedicated-server gameplay NOT_TESTED",
+    "Multiplayer NOT_TESTED",
+    "Long-term stability NOT_TESTED",
+    "Production personal-save runtime NOT_TESTED",
+    "Current positive reward claim NOT_TESTED: no reward definitions in the current eight chapters",
+    "Pre-removal save comparison NOT_TESTED: backup unavailable",
+    "All unaudited-version combinations NOT_TESTED",
+    "Frame comparison is one light isolated scene, not the original mixed workload"
+  ],
+  "failed_trials_excluded": [
+    "Initial missing Mixin config packaging trial",
+    "Unsupported untransformed-bytecode provider trial",
+    "Invalid old S01 test fixture",
+    "Isolated restart without quest-source folder",
+    "Explicit thread-name zero-thread samples"
+  ]
+}

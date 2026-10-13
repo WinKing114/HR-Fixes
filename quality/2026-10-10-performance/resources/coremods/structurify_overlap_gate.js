@@ -25,11 +25,14 @@ function initializeCoreMod() {
                 prefix.add(new VarInsnNode(Opcodes.ALOAD, 2));
                 prefix.add(new MethodInsnNode(Opcodes.INVOKEVIRTUAL, 'java/lang/String', 'equals', '(Ljava/lang/Object;)Z', false));
                 prefix.add(new JumpInsnNode(Opcodes.IFEQ, keep));
+                // Runtime check uses the Mixin loader, after Forge mod discovery.
+                prefix.add(new MethodInsnNode(Opcodes.INVOKESTATIC, 'hollowrealm/performance/HRFixesMixinPlugin', 'shouldDisableStructurifyOverlap', '()Z', false));
+                prefix.add(new JumpInsnNode(Opcodes.IFEQ, keep));
                 prefix.add(new InsnNode(Opcodes.ICONST_0));
                 prefix.add(new InsnNode(Opcodes.IRETURN));
                 prefix.add(keep);
                 method.instructions.insert(prefix);
-                ASMAPI.log('INFO', 'HR Fixes: disabled only CoO 4.6/6.5 Structurify overlap mixin; other gates are preserved.');
+                ASMAPI.log('INFO', 'HR Fixes: installed optional version gate for only the CoO Structurify overlap mixin.');
                 return method;
             }
         }

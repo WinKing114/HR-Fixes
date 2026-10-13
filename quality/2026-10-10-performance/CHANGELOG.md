@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.1-rc.1 (Beta)
+
+- Remove third-party loading dependencies and exact version constraints. Missing or unaudited optional targets skip their patches; Minecraft and Forge remain required.
+- Guard Mixin application by audited versions and original target method signatures, without loading or transforming those classes early. Keep the original attachment, Goety, quest and socketing fixes.
+- Limit the CoO overlap workaround to audited CoO/Structurify pairs, including Structurify 2.0.43. Keep the original structure-generation behavior.
+- Verify native client and minimal dedicated-server loading with Structurify 2.0.42/2.0.43, missing Structurify, missing CoO and all patch targets absent. Full modpack dedicated-server gameplay remains NOT_TESTED.
+
+No new rendering optimization or measured performance improvement is claimed. The companion intelligent-gem data correction is unchanged.
+
 ## 1.1.0 (Beta)
 
 - Preserve FTB Quests' empty quest-panel lifecycle before Quest Enhance reads the description. Valid quest descriptions, persistent-data requests, editing, progress and rewards continue through their original handlers.

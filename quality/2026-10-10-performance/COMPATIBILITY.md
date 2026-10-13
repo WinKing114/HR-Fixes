@@ -1,3 +1,11 @@
+# Current optional loading — 1.1.1-rc.1
+
+Only Minecraft and Forge are loading dependencies. Third-party targets are optional; audited versions and original signatures control patch activation. See `RELEASE-1.1.1-rc.1.md` for current native load cases and limits. Minimal dedicated-server loading is tested; full Hollow Realm dedicated-server gameplay is NOT_TESTED.
+
+---
+
+The notes below describe prior target audits and remain historical; installation constraints from older releases do not apply to 1.1.1-rc.1.
+
 # HR Fixes 1.1.0-rc.1 · 本轮兼容性维护
 
 保留已经验证的 Eternal Starlight 附件修复；其注入类字节码与私有 1.0.0 完全一致。新代码只处理本轮日志确认的三处调用，不修改第三方 JAR、结构规则、交易表、装备权重或正式存档。
