@@ -1,0 +1,14 @@
+{
+  "version": "1.1.2-rc.1",
+  "status": "NOT_READY",
+  "jar_sha256": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+  "sources_sha256": "4cf5dccdab82afa6a462ac25d50fd6fba8da13a2d26bff5ee79b3d25aeac530c",
+  "java_class_major": 61,
+  "class_count": 11,
+  "independent_rebuild": "PASS",
+  "independent_gate_tests": "PASS",
+  "published": false,
+  "source_commit": "5a6d876960766da3c985fe0f5d1f1125e8b21d05",
+  "baseline_commit": "54060e5fbd26852306a241208fec814e4a8da356",
+  "rollback_sha256": "0b272bbf80fcd5a0ac99ba90f156752cb362bc5ce07432531ad0829b32bedd8f"
+}

@@ -2,13 +2,13 @@
 
 Targeted compatibility and bug fixes for the Hollow Realm modpack.
 
-Current candidate: **1.1.0**, Minecraft **1.20.1**, Forge **47.4.16**. This is an independent third-party project, not an official Eternal Starlight release.
+Current candidate: **1.1.1-rc.1**, Minecraft **1.20.1**, Forge **47.4.16**. This is an independent third-party project, not an official Eternal Starlight release.
 
-The JAR retains the attachment, Structurify/CoO and Goety fixes, and adds the Quest Enhance empty-panel guard and Apotheosis/JEI socketing display fix. Target versions are audited and explicitly bounded in `META-INF/mods.toml`. Dedicated servers are NOT_TESTED.
+The JAR retains the attachment, Structurify/CoO and Goety fixes, and adds the Quest Enhance empty-panel guard and Apotheosis/JEI socketing display fix. Only Minecraft and Forge are required loading dependencies. Missing or unaudited third-party targets skip their patch instead of blocking startup. Native minimal dedicated-server loading was tested; full modpack dedicated-server gameplay is NOT_TESTED.
 
 Replace the previous HR Fixes JAR while the game is closed; install only one `hollowrealm_performance_compat` mod ID. The accompanying intelligent-gem repair is a separate modpack data file under `overrides/kubejs/data/` and is not bundled in the JAR. Its existing numeric values are retained.
 
-[Build](BUILD.md) · [Changelog](CHANGELOG.md) · [Validation and delivery report](RELEASE-1.1.0.md) · [CurseForge upload information](CURSEFORGE.md)
+[Build](BUILD.md) · [Changelog](CHANGELOG.md) · [Validation and delivery report](RELEASE-1.1.1-rc.1.md) · [CurseForge upload information](CURSEFORGE.md)
 
 Source and build outputs have matching versions. This release does not change quest identities, progress/rewards, loot rarity weights, saved-world formats, or structure-generation rules. It does not claim measured FPS/TPS/memory improvements.
 
