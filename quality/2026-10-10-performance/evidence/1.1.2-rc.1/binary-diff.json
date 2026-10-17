@@ -1,0 +1,12 @@
+{
+  "baseline_commit": "54060e5fbd26852306a241208fec814e4a8da356",
+  "baseline_rebuild_sha256": "0b272bbf80fcd5a0ac99ba90f156752cb362bc5ce07432531ad0829b32bedd8f",
+  "baseline_rebuild_matches_retained_jar": true,
+  "changed_jar_entries": [
+    "META-INF/mods.toml",
+    "hollowrealm/performance/HRFixesMixinPlugin.class"
+  ],
+  "six_mixins_helpers_coremod_and_mixin_config_byte_identical": true,
+  "preexisting_mislabeled_112_jar_sha256": "dae171ed2b3b05ba6e0fd4b6a0c6800c189d0066f675f88f5325bccaf71abbca",
+  "preexisting_mislabeled_112_embedded_version": "1.1.1"
+}

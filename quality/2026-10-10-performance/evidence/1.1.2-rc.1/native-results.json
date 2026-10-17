@@ -1,0 +1,659 @@
+[
+  {
+    "side": "client",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "all",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SCREEN net.minecraftforge.client.gui.LoadingErrorScreen",
+      "[HR112] PASS Forge loading screen contains warnings only",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.ConfirmScreen",
+      "[HR112] CONFIRM_TITLE translation{key='selectWorld.backupQuestion.experimental', args=[]}",
+      "[HR112] PASS only fresh fixture experimental-world prompt accepted",
+      "[HR112] SERVER_STARTED CLIENT",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS merged Redirect hollowrealm$tradeRandom",
+      "[HR112] PASS main thread original random",
+      "[HR112] PASS main thread trade generation",
+      "[HR112] PASS native entity NBT saved",
+      "[HR112] PASS registered goetyominous:zealot",
+      "[HR112] PASS merged Redirect hollowrealm$equipmentRandom",
+      "[HR112] PASS main thread equipment",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker entity random",
+      "[HR112] PASS worker trade NBT retained",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker fresh trades",
+      "[HR112] PASS registered goetyominous:zealot",
+      "[HR112] PASS worker equipment",
+      "[HR112] COMPLETE write",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen",
+      "[HR112] PASS attachment null sender updates client data",
+      "[HR112] PASS attachment explicit player preserved",
+      "[HR112] PASS attachment absent local player safe",
+      "[HR112] PASS quest empty panel refresh with Quest Enhance",
+      "[HR112] PASS quest empty panel native dimensions retained",
+      "[HR112] PASS quest guard merged",
+      "[HR112] PASS JEI runtime available",
+      "[HR112] PASS Apotheosis socketing JEI layout built",
+      "[HR112] PASS JEI base gem and output populated",
+      "[HR112] PASS socketing focus-link injection merged",
+      "[HR112] CLIENT_REGRESSION_COMPLETE"
+    ],
+    "log_sha256": "4bd36bf2f6a0b94d7c0750b6b5bdae9a0898b7a83346118f8f2c7ef081ec4a49",
+    "inventory": {
+      "ApothicAttributes-1.20.1-1.3.7.jar": "68487b11c0d4e2f67a85f2b04bf65e99ac15294f2923f4391f83e9542293187a",
+      "architectury-9.2.14-forge.jar": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+      "curios-forge-5.14.1+1.20.1.jar": "1e817919a35b37cf30524aaec73f0ca5130452f23f168f844854df282eb8e51f",
+      "EternalStarlight-0.9.0-hotfix.jar": "6f3bfb62c887723c593973dfe325992d4886a3dbfd1a8a05d26829fc5aeb4096",
+      "ftb-library-forge-2001.2.13.jar": "41810281b65336265cae2c88412022d02f2f0a3f28c66a06173d86f98acf14a7",
+      "geckolib-forge-1.20.1-4.8.4.jar": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+      "goetyominous-3.0.0.fix-1.20.1.jar": "4b5b267f5f1a4706845e81fc7193ef011c94614324af645a6f21bd17a74e2860",
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "a95930f0ead131cc497989fe3b73e09a45085c9c755a2590db5938545009bf5f",
+      "Placebo-1.20.1-8.6.3.jar": "1cdf906cfbcbb5e5be2ef1bb721f79a24b01bd2ac559c8cdbfb7693f62421571",
+      "quest_enhance-1.20.1-forge-3.13.jar": "60d4e20fad2478309e26b1c5b9d8518d7853e5f1710a47e00ab54a7808e1e7b2",
+      "[FTB 任务] ftb-quests-forge-2001.4.22.jar": "9ea9d159a78a2724cfe0457b024680fdb52a2126eff9cfa5280a30578f647a68",
+      "[FTB 团队] ftb-teams-forge-2001.3.2.jar": "b1cb4d82ea9f137a87e12a7aaf3329619294b56f7d70337dfd557a76e10b6e07",
+      "[JEI物品管理器] jei-1.20.1-forge-15.56.0.205.jar": "6b251e60a4719c874da89d750af97aa6498f6f4475e3ae79cb1288c7bf0cb65c",
+      "[神化] Apotheosis-1.20.1-7.4.8.jar": "5ed8c17cf62837bb649d1054e3e4fe93c4d9bdec98fe9f332e2637a260da30da",
+      "[诡厄巫法] goety-2.5.58.4.jar": "b97f9a5928b5b3665cc7de88d5a1b52a4b07b6ed260f64ef9584b0c4603bee52",
+      "[诡厄巫法：觉醒] goetyawaken-1.3.9.4.jar": "5e875b353187b0efab5b0ec1849e6312b49b751f3fcdab767d3a6c57b2a16ead"
+    },
+    "fixture": ".runtime/native-v6/client-47.4.16-all",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "APPLY hollowrealm.performance.mixin.ZealotWorldgenRandomMixin",
+      "APPLY hollowrealm.performance.mixin.AttachmentClientMixin",
+      "APPLY hollowrealm.performance.mixin.QuestPanelLifecycleMixin",
+      "APPLY hollowrealm.performance.mixin.ApotheosisJeiMixin",
+      "APPLY hollowrealm.performance.mixin.SocketingJeiLayoutMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "client",
+    "forge": "47.4.22",
+    "java": "21",
+    "case": "all",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SCREEN net.minecraftforge.client.gui.LoadingErrorScreen",
+      "[HR112] PASS Forge loading screen contains warnings only",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.ConfirmScreen",
+      "[HR112] CONFIRM_TITLE translation{key='selectWorld.backupQuestion.experimental', args=[]}",
+      "[HR112] PASS only fresh fixture experimental-world prompt accepted",
+      "[HR112] SERVER_STARTED CLIENT",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS merged Redirect hollowrealm$tradeRandom",
+      "[HR112] PASS main thread original random",
+      "[HR112] PASS main thread trade generation",
+      "[HR112] PASS native entity NBT saved",
+      "[HR112] PASS registered goetyominous:zealot",
+      "[HR112] PASS merged Redirect hollowrealm$equipmentRandom",
+      "[HR112] PASS main thread equipment",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker entity random",
+      "[HR112] PASS worker trade NBT retained",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker fresh trades",
+      "[HR112] PASS registered goetyominous:zealot",
+      "[HR112] PASS worker equipment",
+      "[HR112] COMPLETE write",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen",
+      "[HR112] PASS attachment null sender updates client data",
+      "[HR112] PASS attachment explicit player preserved",
+      "[HR112] PASS attachment absent local player safe",
+      "[HR112] PASS quest empty panel refresh with Quest Enhance",
+      "[HR112] PASS quest empty panel native dimensions retained",
+      "[HR112] PASS quest guard merged",
+      "[HR112] PASS JEI runtime available",
+      "[HR112] PASS Apotheosis socketing JEI layout built",
+      "[HR112] PASS JEI base gem and output populated",
+      "[HR112] PASS socketing focus-link injection merged",
+      "[HR112] CLIENT_REGRESSION_COMPLETE"
+    ],
+    "log_sha256": "6294916280ccd4e0bfc7b4c814d8988eff7cd68edce72d4612718e6803379b75",
+    "inventory": {
+      "ApothicAttributes-1.20.1-1.3.7.jar": "68487b11c0d4e2f67a85f2b04bf65e99ac15294f2923f4391f83e9542293187a",
+      "architectury-9.2.14-forge.jar": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+      "curios-forge-5.14.1+1.20.1.jar": "1e817919a35b37cf30524aaec73f0ca5130452f23f168f844854df282eb8e51f",
+      "EternalStarlight-0.9.0-hotfix.jar": "6f3bfb62c887723c593973dfe325992d4886a3dbfd1a8a05d26829fc5aeb4096",
+      "ftb-library-forge-2001.2.13.jar": "41810281b65336265cae2c88412022d02f2f0a3f28c66a06173d86f98acf14a7",
+      "geckolib-forge-1.20.1-4.8.4.jar": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+      "goetyominous-3.0.0.fix-1.20.1.jar": "4b5b267f5f1a4706845e81fc7193ef011c94614324af645a6f21bd17a74e2860",
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "ad50bd7660b166b9699ca21d92f22fc7710e3080602344549edcdff2290b0dda",
+      "Placebo-1.20.1-8.6.3.jar": "1cdf906cfbcbb5e5be2ef1bb721f79a24b01bd2ac559c8cdbfb7693f62421571",
+      "quest_enhance-1.20.1-forge-3.13.jar": "60d4e20fad2478309e26b1c5b9d8518d7853e5f1710a47e00ab54a7808e1e7b2",
+      "[FTB 任务] ftb-quests-forge-2001.4.22.jar": "9ea9d159a78a2724cfe0457b024680fdb52a2126eff9cfa5280a30578f647a68",
+      "[FTB 团队] ftb-teams-forge-2001.3.2.jar": "b1cb4d82ea9f137a87e12a7aaf3329619294b56f7d70337dfd557a76e10b6e07",
+      "[JEI物品管理器] jei-1.20.1-forge-15.56.0.205.jar": "6b251e60a4719c874da89d750af97aa6498f6f4475e3ae79cb1288c7bf0cb65c",
+      "[神化] Apotheosis-1.20.1-7.4.8.jar": "5ed8c17cf62837bb649d1054e3e4fe93c4d9bdec98fe9f332e2637a260da30da",
+      "[诡厄巫法] goety-2.5.58.4.jar": "b97f9a5928b5b3665cc7de88d5a1b52a4b07b6ed260f64ef9584b0c4603bee52",
+      "[诡厄巫法：觉醒] goetyawaken-1.3.9.4.jar": "5e875b353187b0efab5b0ec1849e6312b49b751f3fcdab767d3a6c57b2a16ead"
+    },
+    "fixture": ".runtime/native-v6/client-47.4.22-all",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "APPLY hollowrealm.performance.mixin.ZealotWorldgenRandomMixin",
+      "APPLY hollowrealm.performance.mixin.AttachmentClientMixin",
+      "APPLY hollowrealm.performance.mixin.QuestPanelLifecycleMixin",
+      "APPLY hollowrealm.performance.mixin.ApotheosisJeiMixin",
+      "APPLY hollowrealm.performance.mixin.SocketingJeiLayoutMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "client",
+    "forge": "47.4.22",
+    "java": "21",
+    "case": "none",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SCREEN net.minecraftforge.client.gui.LoadingErrorScreen",
+      "[HR112] PASS Forge loading screen contains warnings only",
+      "[HR112] SERVER_STARTED CLIENT",
+      "[HR112] COMPLETE write",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen"
+    ],
+    "log_sha256": "1e1d2a6fa3cb743a44dc6ca4061e4f4daa625446bfc67ff9defb0b6c2eaf9d96",
+    "inventory": {
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "143fe0c4297a76771a77aae6188bb169981ddc75242ea5566952ff7a33b32d31"
+    },
+    "fixture": ".runtime/native-v6/client-47.4.22-none",
+    "gate_markers": [
+      "SKIP hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.AttachmentClientMixin",
+      "SKIP hollowrealm.performance.mixin.QuestPanelLifecycleMixin",
+      "SKIP hollowrealm.performance.mixin.ApotheosisJeiMixin",
+      "SKIP hollowrealm.performance.mixin.SocketingJeiLayoutMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "client",
+    "forge": "47.4.22",
+    "java": "21",
+    "case": "goety",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SCREEN net.minecraftforge.client.gui.LoadingErrorScreen",
+      "[HR112] PASS Forge loading screen contains warnings only",
+      "[HR112] SERVER_STARTED CLIENT",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS merged Redirect hollowrealm$tradeRandom",
+      "[HR112] PASS main thread original random",
+      "[HR112] PASS main thread trade generation",
+      "[HR112] PASS native entity NBT saved",
+      "[HR112] PASS registered goetyominous:zealot",
+      "[HR112] PASS merged Redirect hollowrealm$equipmentRandom",
+      "[HR112] PASS main thread equipment",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker entity random",
+      "[HR112] PASS worker trade NBT retained",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker fresh trades",
+      "[HR112] PASS registered goetyominous:zealot",
+      "[HR112] PASS worker equipment",
+      "[HR112] COMPLETE write",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen"
+    ],
+    "log_sha256": "7025497e227dc5ec8a856fa6bc1f526b62c090cde79866597c7dac5ed0bab5bf",
+    "inventory": {
+      "curios-forge-5.14.1+1.20.1.jar": "1e817919a35b37cf30524aaec73f0ca5130452f23f168f844854df282eb8e51f",
+      "geckolib-forge-1.20.1-4.8.4.jar": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+      "goetyominous-3.0.0.fix-1.20.1.jar": "4b5b267f5f1a4706845e81fc7193ef011c94614324af645a6f21bd17a74e2860",
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "096cfa8a413855fd2ab04f223a2ab74cae2ef1ebdd5e5347a2d6b66188745553",
+      "[诡厄巫法] goety-2.5.58.4.jar": "b97f9a5928b5b3665cc7de88d5a1b52a4b07b6ed260f64ef9584b0c4603bee52",
+      "[诡厄巫法：觉醒] goetyawaken-1.3.9.4.jar": "5e875b353187b0efab5b0ec1849e6312b49b751f3fcdab767d3a6c57b2a16ead"
+    },
+    "fixture": ".runtime/native-v2/client-47.4.22-goety",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "APPLY hollowrealm.performance.mixin.ZealotWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.AttachmentClientMixin",
+      "SKIP hollowrealm.performance.mixin.QuestPanelLifecycleMixin",
+      "SKIP hollowrealm.performance.mixin.ApotheosisJeiMixin",
+      "SKIP hollowrealm.performance.mixin.SocketingJeiLayoutMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "client",
+    "forge": "47.4.22",
+    "java": "21",
+    "case": "goety",
+    "phase": "read",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SCREEN net.minecraftforge.client.gui.LoadingErrorScreen",
+      "[HR112] PASS Forge loading screen contains warnings only",
+      "[HR112] SERVER_STARTED CLIENT",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS merged Redirect hollowrealm$tradeRandom",
+      "[HR112] PASS main thread original random",
+      "[HR112] PASS main thread trade generation",
+      "[HR112] PASS previous process NBT exists",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS restart trade NBT restored semantically",
+      "[HR112] PASS registered goetyominous:zealot",
+      "[HR112] PASS merged Redirect hollowrealm$equipmentRandom",
+      "[HR112] PASS main thread equipment",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker entity random",
+      "[HR112] PASS worker trade NBT retained",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker fresh trades",
+      "[HR112] PASS registered goetyominous:zealot",
+      "[HR112] PASS worker equipment",
+      "[HR112] COMPLETE read",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.LevelLoadingScreen",
+      "[HR112] SCREEN net.minecraft.client.gui.screens.ReceivingLevelScreen"
+    ],
+    "log_sha256": "68549007f314eea0d4f2c6c6cb211e8f510e05f50f1fb3e2e81ac25eb9cf67b5",
+    "inventory": {
+      "curios-forge-5.14.1+1.20.1.jar": "1e817919a35b37cf30524aaec73f0ca5130452f23f168f844854df282eb8e51f",
+      "geckolib-forge-1.20.1-4.8.4.jar": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+      "goetyominous-3.0.0.fix-1.20.1.jar": "4b5b267f5f1a4706845e81fc7193ef011c94614324af645a6f21bd17a74e2860",
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "096cfa8a413855fd2ab04f223a2ab74cae2ef1ebdd5e5347a2d6b66188745553",
+      "[诡厄巫法] goety-2.5.58.4.jar": "b97f9a5928b5b3665cc7de88d5a1b52a4b07b6ed260f64ef9584b0c4603bee52",
+      "[诡厄巫法：觉醒] goetyawaken-1.3.9.4.jar": "5e875b353187b0efab5b0ec1849e6312b49b751f3fcdab767d3a6c57b2a16ead"
+    },
+    "fixture": ".runtime/native-v2/client-47.4.22-goety",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "APPLY hollowrealm.performance.mixin.ZealotWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.AttachmentClientMixin",
+      "SKIP hollowrealm.performance.mixin.QuestPanelLifecycleMixin",
+      "SKIP hollowrealm.performance.mixin.ApotheosisJeiMixin",
+      "SKIP hollowrealm.performance.mixin.SocketingJeiLayoutMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "none",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SERVER_STARTED DEDICATED_SERVER",
+      "[HR112] COMPLETE write"
+    ],
+    "log_sha256": "7d7c26f70510bcbb5f223117bd9f278d63d6b34259f5e09db6dcc571f4495def",
+    "inventory": {
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "47c58e083c2c32a486cad726ba7a057fa225071d8320335ade9daa3ae0d6d172"
+    },
+    "fixture": ".runtime/native-112/server-47.4.16-none",
+    "gate_markers": [
+      "SKIP hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "coo",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[13:12:04] [main/INFO] [ne.mi.co.Co.hollowrealm_performance_compat/COREMODLOG]: HR Fixes: installed optional version gate for only the CoO Structurify overlap mixin.",
+      "[HR112] SERVER_STARTED DEDICATED_SERVER",
+      "[HR112] PASS CoO overlap disabled",
+      "[HR112] PASS CoO unrelated gate retained",
+      "[HR112] COMPLETE write"
+    ],
+    "log_sha256": "505f7bb1bebb254ecece933c14b5adf81004ec82473b9e564aaca9be88b0b685",
+    "inventory": {
+      "collections_of_optimizations-6.5-all.jar": "1373bd0e8801425dea778b46652ccd18d1f111becd99b80193e216012eaab275",
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "7a1d801ede3bac00a54af1f79da379bcdbf7be5c6d6751ad8023f08d53fc0e23",
+      "structurify-forge-2.0.43+mc1.20.1.jar": "a5cb28ab19ee49da0c4cbfec964d4113dc4155fed7ecd7cff69e3bccdc710390"
+    },
+    "fixture": ".runtime/native-112/server-47.4.16-coo",
+    "gate_markers": [
+      "SKIP hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "unknown",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SERVER_STARTED DEDICATED_SERVER",
+      "[HR112] PASS self-authored drift/unknown fixture safely skipped",
+      "[HR112] COMPLETE write"
+    ],
+    "log_sha256": "8b3b604609dd3147f91234ccb2ca77449515739dc234184576995e4a2d02290d",
+    "inventory": {
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "72bb57e3498d7c9304a0c329c7f11fa3bed9e07e311bfb18123c8b4241935f2e",
+      "self-authored-target-fixture.jar": "a9e450b10ec15e1e7920b7182391e56d6dd13b053b9ea32939754763d5cb4cdb"
+    },
+    "fixture": ".runtime/native-112/server-47.4.16-unknown",
+    "gate_markers": [
+      "SKIP hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "awaken",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SERVER_STARTED DEDICATED_SERVER",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS merged Redirect hollowrealm$tradeRandom",
+      "[HR112] PASS main thread original random",
+      "[HR112] PASS main thread trade generation",
+      "[HR112] PASS native entity NBT saved",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker entity random",
+      "[HR112] PASS worker trade NBT retained",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker fresh trades",
+      "[HR112] COMPLETE write"
+    ],
+    "log_sha256": "68b3af8ebeb04dfde13617512eedb822613a902ace3ba1d40d1109c6a63337c1",
+    "inventory": {
+      "curios-forge-5.14.1+1.20.1.jar": "1e817919a35b37cf30524aaec73f0ca5130452f23f168f844854df282eb8e51f",
+      "geckolib-forge-1.20.1-4.8.4.jar": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "806b8748f717fe33f01b5eed21112967bbeeda4aa53e8b1e947c7b7e67219f28",
+      "[诡厄巫法] goety-2.5.58.4.jar": "b97f9a5928b5b3665cc7de88d5a1b52a4b07b6ed260f64ef9584b0c4603bee52",
+      "[诡厄巫法：觉醒] goetyawaken-1.3.9.4.jar": "5e875b353187b0efab5b0ec1849e6312b49b751f3fcdab767d3a6c57b2a16ead"
+    },
+    "fixture": ".runtime/native-112/server-47.4.16-awaken",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "drift-missing",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SERVER_STARTED DEDICATED_SERVER",
+      "[HR112] PASS self-authored drift/unknown fixture safely skipped",
+      "[HR112] COMPLETE write"
+    ],
+    "log_sha256": "c89d64ac330a5ab341a900ab60a998f08421d854a47a36204554135d83d00d93",
+    "inventory": {
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "79d595812c4d9bae3a422c2ac7aa431e8ece40e1f3858cf398824efedc2e84c9",
+      "self-authored-target-fixture.jar": "67f4672bb8168508dfb8a9f5aa917ad9459f31f0ed44215908815f10aa1da76e"
+    },
+    "fixture": ".runtime/native-112/server-47.4.16-drift-missing",
+    "gate_markers": [
+      "SKIP hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "drift-duplicate",
+    "phase": "write",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SERVER_STARTED DEDICATED_SERVER",
+      "[HR112] PASS self-authored drift/unknown fixture safely skipped",
+      "[HR112] COMPLETE write"
+    ],
+    "log_sha256": "0873e4ffdf87259b990e9e910c8d8c2f9bad927a334a64c5f34bb37f89fbd351",
+    "inventory": {
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "72bb57e3498d7c9304a0c329c7f11fa3bed9e07e311bfb18123c8b4241935f2e",
+      "self-authored-target-fixture.jar": "cec79b76453ca70f568b3aa224ed802a9f1a679eb2a994cd806008b5b33c66ae"
+    },
+    "fixture": ".runtime/native-112/server-47.4.16-drift-duplicate",
+    "gate_markers": [
+      "SKIP hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": []
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "drift-missing",
+    "phase": "write",
+    "status": "FAIL",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": false,
+    "markers": [
+      "\t\thr-fixes-1.1.1-rc.1.jar                           |HR Fixes                      |hollowrealm_performance_compat|1.1.1-rc.1          |NONE      |Manifest: NOSIGNATURE"
+    ],
+    "log_sha256": "fef1d17420f6c9192a288a5fcd1a58d7526f5a533f998b4b16d85c17cdc3afa1",
+    "inventory": {
+      "hr-fixes-1.1.1-rc.1.jar": "0b272bbf80fcd5a0ac99ba90f156752cb362bc5ce07432531ad0829b32bedd8f",
+      "hr-native-qa.jar": "c5f3a585f7958c34342f5cccef360096b3c827d9165dcb644a90c9ab58087f24",
+      "self-authored-target-fixture.jar": "98adba56584893f422d74ec0991a0b4a3c79fe5b3fa9129c47002a75bc30ab3b"
+    },
+    "fixture": ".runtime/baseline-native/server-47.4.16-drift-missing",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": [
+      "Caused by: org.spongepowered.asm.mixin.injection.throwables.InjectionError: Critical injection failure: Redirector hollowrealm$tradeRandom(Lnet/minecraft/world/level/Level;)Lnet/minecraft/util/RandomSource; in hollowrealm-performance.mixins.json:SorcererWorldgenRandomMixin failed injection check, (0/1) succeeded. Scanned 1 target(s). No refMap loaded.",
+      "Exception message: org.spongepowered.asm.mixin.injection.throwables.InjectionError: Critical injection failure: Redirector hollowrealm$tradeRandom(Lnet/minecraft/world/level/Level;)Lnet/minecraft/util/RandomSource; in hollowrealm-performance.mixins.json:SorcererWorldgenRandomMixin failed injection check, (0/1) succeeded. Scanned 1 target(s). No refMap loaded."
+    ],
+    "expected_failure_reproduction": "PASS"
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "drift-duplicate",
+    "phase": "write",
+    "status": "FAIL",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": false,
+    "markers": [
+      "\t\thr-fixes-1.1.1-rc.1.jar                           |HR Fixes                      |hollowrealm_performance_compat|1.1.1-rc.1          |NONE      |Manifest: NOSIGNATURE"
+    ],
+    "log_sha256": "7e1e42053e486d42bc06960a5ca95684962eae26c612a54481c19694ca822698",
+    "inventory": {
+      "hr-fixes-1.1.1-rc.1.jar": "0b272bbf80fcd5a0ac99ba90f156752cb362bc5ce07432531ad0829b32bedd8f",
+      "hr-native-qa.jar": "72bb57e3498d7c9304a0c329c7f11fa3bed9e07e311bfb18123c8b4241935f2e",
+      "self-authored-target-fixture.jar": "cec79b76453ca70f568b3aa224ed802a9f1a679eb2a994cd806008b5b33c66ae"
+    },
+    "fixture": ".runtime/baseline-native/server-47.4.16-drift-duplicate",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": [
+      "Caused by: org.spongepowered.asm.mixin.injection.throwables.InjectionError: Critical injection failure: Redirector hollowrealm$tradeRandom(Lnet/minecraft/world/level/Level;)Lnet/minecraft/util/RandomSource; in hollowrealm-performance.mixins.json:SorcererWorldgenRandomMixin failed injection check, 2 succeeded of 1 allowed.",
+      "Exception message: org.spongepowered.asm.mixin.injection.throwables.InjectionError: Critical injection failure: Redirector hollowrealm$tradeRandom(Lnet/minecraft/world/level/Level;)Lnet/minecraft/util/RandomSource; in hollowrealm-performance.mixins.json:SorcererWorldgenRandomMixin failed injection check, 2 succeeded of 1 allowed."
+    ],
+    "expected_failure_reproduction": "PASS"
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "goety",
+    "phase": "write",
+    "status": "FAIL",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": false,
+    "markers": [
+      "\t\thr-fixes-1.1.2-rc.1.jar                           |HR Fixes                      |hollowrealm_performance_compat|1.1.2-rc.1          |COMMON_SET|Manifest: NOSIGNATURE"
+    ],
+    "log_sha256": "a4c24b3d4958a3cdcfa843f123d2bc4184f5c0b41fce6f77a92a11db231e381f",
+    "inventory": {
+      "curios-forge-5.14.1+1.20.1.jar": "1e817919a35b37cf30524aaec73f0ca5130452f23f168f844854df282eb8e51f",
+      "geckolib-forge-1.20.1-4.8.4.jar": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+      "goetyominous-3.0.0.fix-1.20.1.jar": "4b5b267f5f1a4706845e81fc7193ef011c94614324af645a6f21bd17a74e2860",
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "69d41e03be8fc6f1f7162b920919859f9db636c75f6901a19690a0efd6083da9",
+      "[诡厄巫法] goety-2.5.58.4.jar": "b97f9a5928b5b3665cc7de88d5a1b52a4b07b6ed260f64ef9584b0c4603bee52",
+      "[诡厄巫法：觉醒] goetyawaken-1.3.9.4.jar": "5e875b353187b0efab5b0ec1849e6312b49b751f3fcdab767d3a6c57b2a16ead"
+    },
+    "fixture": ".runtime/native-112/server-47.4.16-goety",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "APPLY hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": [
+      "[13:10:15] [modloading-worker-0/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER",
+      "[13:10:15] [modloading-worker-0/ERROR] [ne.mi.fm.ja.FMLModContainer/LOADING]: Failed to register automatic subscribers. ModID: goetyominous, class com.qiuyue.goetyominous.GoetyOminous",
+      "java.lang.RuntimeException: Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER",
+      "Exception message: java.lang.RuntimeException: Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER",
+      "��7java.lang.RuntimeException: Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER"
+    ],
+    "attribution": "Goety Ominous subscriber registration; reproduced with baseline and candidate; target gameplay NOT_TESTED"
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "goety",
+    "phase": "write",
+    "status": "FAIL",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": false,
+    "markers": [
+      "\t\thr-fixes-1.1.1-rc.1.jar                           |HR Fixes                      |hollowrealm_performance_compat|1.1.1-rc.1          |COMMON_SET|Manifest: NOSIGNATURE"
+    ],
+    "log_sha256": "56324b86f1e397b849da00dd76ca0feb82d4c017c5621f54305eeb9f95175d3f",
+    "inventory": {
+      "curios-forge-5.14.1+1.20.1.jar": "1e817919a35b37cf30524aaec73f0ca5130452f23f168f844854df282eb8e51f",
+      "geckolib-forge-1.20.1-4.8.4.jar": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+      "goetyominous-3.0.0.fix-1.20.1.jar": "4b5b267f5f1a4706845e81fc7193ef011c94614324af645a6f21bd17a74e2860",
+      "hr-fixes-1.1.1-rc.1.jar": "0b272bbf80fcd5a0ac99ba90f156752cb362bc5ce07432531ad0829b32bedd8f",
+      "hr-native-qa.jar": "cfcf6adf4c3c134fc9785af82a8773860a374f060523a6d0a560f612ec837b71",
+      "[诡厄巫法] goety-2.5.58.4.jar": "b97f9a5928b5b3665cc7de88d5a1b52a4b07b6ed260f64ef9584b0c4603bee52",
+      "[诡厄巫法：觉醒] goetyawaken-1.3.9.4.jar": "5e875b353187b0efab5b0ec1849e6312b49b751f3fcdab767d3a6c57b2a16ead"
+    },
+    "fixture": ".runtime/baseline-native/server-47.4.16-goety",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "APPLY hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": [
+      "[13:12:38] [modloading-worker-0/ERROR] [ne.mi.fm.lo.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER",
+      "[13:12:38] [modloading-worker-0/ERROR] [ne.mi.fm.ja.FMLModContainer/LOADING]: Failed to register automatic subscribers. ModID: goetyominous, class com.qiuyue.goetyominous.GoetyOminous",
+      "java.lang.RuntimeException: Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER",
+      "Exception message: java.lang.RuntimeException: Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER",
+      "��7java.lang.RuntimeException: Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER"
+    ],
+    "attribution": "Goety Ominous subscriber registration; reproduced with baseline and candidate; target gameplay NOT_TESTED"
+  },
+  {
+    "side": "server",
+    "forge": "47.4.16",
+    "java": "21",
+    "case": "awaken",
+    "phase": "read",
+    "status": "PASS",
+    "exit_code": 0,
+    "timeout": false,
+    "normal_world_save": true,
+    "markers": [
+      "[HR112] SERVER_STARTED DEDICATED_SERVER",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS merged Redirect hollowrealm$tradeRandom",
+      "[HR112] PASS main thread original random",
+      "[HR112] PASS main thread trade generation",
+      "[HR112] PASS previous process NBT exists",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS restart trade NBT restored semantically",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker entity random",
+      "[HR112] PASS worker trade NBT retained",
+      "[HR112] PASS registered goetyawaken:sorcerer_servant",
+      "[HR112] PASS worker fresh trades",
+      "[HR112] COMPLETE read"
+    ],
+    "log_sha256": "5a9aba7e610a700fbfd809f0b6e9fd651300e1eff3dc64887a68b117f0956d63",
+    "inventory": {
+      "curios-forge-5.14.1+1.20.1.jar": "1e817919a35b37cf30524aaec73f0ca5130452f23f168f844854df282eb8e51f",
+      "geckolib-forge-1.20.1-4.8.4.jar": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+      "hr-fixes-1.1.2-rc.1.jar": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "hr-native-qa.jar": "806b8748f717fe33f01b5eed21112967bbeeda4aa53e8b1e947c7b7e67219f28",
+      "[诡厄巫法] goety-2.5.58.4.jar": "b97f9a5928b5b3665cc7de88d5a1b52a4b07b6ed260f64ef9584b0c4603bee52",
+      "[诡厄巫法：觉醒] goetyawaken-1.3.9.4.jar": "5e875b353187b0efab5b0ec1849e6312b49b751f3fcdab767d3a6c57b2a16ead"
+    },
+    "fixture": ".runtime/native-112/server-47.4.16-awaken",
+    "gate_markers": [
+      "APPLY hollowrealm.performance.mixin.SorcererWorldgenRandomMixin",
+      "SKIP hollowrealm.performance.mixin.ZealotWorldgenRandomMixin"
+    ],
+    "failure_evidence": []
+  }
+]

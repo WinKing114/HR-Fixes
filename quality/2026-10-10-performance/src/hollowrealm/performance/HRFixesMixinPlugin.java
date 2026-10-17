@@ -6,6 +6,8 @@ import net.minecraftforge.fml.loading.LoadingModList;
 import net.minecraftforge.fml.loading.moddiscovery.ModInfo;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.tree.FieldInsnNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import org.spongepowered.asm.service.MixinService;
@@ -58,6 +60,35 @@ public final class HRFixesMixinPlugin implements IMixinConfigPlugin {
         }
     }
 
+    private static boolean randomFieldRedirect(String target, String name, String descriptor) {
+        // Match the raw FIELD selector and its require=1/allow=1 contract.
+        // Do not ask the bytecode provider to transform an optional target here.
+        try (java.io.InputStream stream = MixinService.getService().getResourceAsStream(target.replace('.', '/') + ".class")) {
+            if (stream == null) return false;
+            ClassNode node = new ClassNode();
+            new ClassReader(stream).accept(node, ClassReader.SKIP_DEBUG | ClassReader.SKIP_FRAMES);
+            int methods = 0;
+            int sites = 0;
+            for (var method : node.methods) {
+                if (!name.equals(method.name) || !descriptor.equals(method.desc)) continue;
+                methods++;
+                for (var instruction : method.instructions) {
+                    if (instruction instanceof FieldInsnNode field
+                            && field.getOpcode() == Opcodes.GETFIELD
+                            && "net/minecraft/world/level/Level".equals(field.owner)
+                            && "f_46441_".equals(field.name)
+                            && "Lnet/minecraft/util/RandomSource;".equals(field.desc)) {
+                        sites++;
+                    }
+                }
+            }
+            return methods == 1 && sites == 1;
+        } catch (java.io.IOException | RuntimeException unreadable) {
+            // Missing, malformed or unsupported optional class bytes must fail closed.
+            return false;
+        }
+    }
+
     private static boolean compatible(String targetClassName, String mixinClassName) {
         String mixin = mixinClassName.substring(mixinClassName.lastIndexOf('.') + 1);
         switch (mixin) {
@@ -65,10 +96,10 @@ public final class HRFixesMixinPlugin implements IMixinConfigPlugin {
                 return tested("eternal_starlight", "0.9.0")
                     && method(targetClassName, "handle", "(Lnet/minecraft/world/entity/player/Player;)V");
             case "SorcererWorldgenRandomMixin":
-                return tested("goetyawaken", "1.3.9.4") && method(targetClassName, "generateOffers", "()V");
+                return tested("goetyawaken", "1.3.9.4") && randomFieldRedirect(targetClassName, "generateOffers", "()V");
             case "ZealotWorldgenRandomMixin":
                 return tested("goetyominous", "3.0.0.fix-1.20.1")
-                    && method(targetClassName, "populateDefaultEquipmentSlots", "(Lnet/minecraft/world/DifficultyInstance;)V");
+                    && randomFieldRedirect(targetClassName, "populateDefaultEquipmentSlots", "(Lnet/minecraft/world/DifficultyInstance;)V");
             case "QuestPanelLifecycleMixin":
                 return tested("ftbquests", "2001.4.22")
                     && tested("quest_enhance", "1.20.1-forge-3.13") && method(targetClassName, "addWidgets", "()V");

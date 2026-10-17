@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.2-rc.1 (development candidate, 2026-10-17 — NOT_READY)
+
+- Validate the original bytecode location of both audited Goety worldgen random-source Redirects before enabling them. Require exactly one matching `GETFIELD` instruction with the expected owner, field name and descriptor in the target method.
+- Skip targets with missing, duplicate or mismatched injection sites, or unreadable class bytes. Read raw class resources without loading target classes or invoking the transforming bytecode provider.
+- Preserve all six existing Mixin implementations, optional-dependency version allowlists and the narrowly scoped CoO/Structurify workaround. No new target versions, gameplay changes or performance claims.
+- Add real-target bytecode regression tests, native Forge baseline/candidate drift fixtures, focused client/server smoke checks and independent source-package rebuild verification.
+- This candidate is not published or deployed. Actual Goety Ominous dedicated-server gameplay is blocked by its existing client-class loading failure, reproduced with the stable baseline. Full gameplay and multiplayer acceptance remain incomplete; see the candidate report.
+
 ## 1.1.1-rc.1 (Beta)
 
 - Remove third-party loading dependencies and exact version constraints. Missing or unaudited optional targets skip their patches; Minecraft and Forge remain required.

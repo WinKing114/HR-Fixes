@@ -1,0 +1,5 @@
+4cf5dccdab82afa6a462ac25d50fd6fba8da13a2d26bff5ee79b3d25aeac530c  hr-fixes-1.1.2-rc.1-sources.zip
+0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6  hr-fixes-1.1.2-rc.1.jar
+b7bd1bac160ad9ebdaa49c495615e8741df46dbe45acbabd2940124a472e0268  provenance-1.1.2-rc.1.json
+df90aedf7144ae554d20a89a55df970a8fcef86c98c4b0514a6203d1362d728a  README.md
+0b272bbf80fcd5a0ac99ba90f156752cb362bc5ce07432531ad0829b32bedd8f  rollback/hr-fixes-1.1.1-rc.1.jar
