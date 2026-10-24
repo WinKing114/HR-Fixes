@@ -34,4 +34,65 @@ HR Fixes does not redesign quests, replace gameplay configurations, or automatic
 
 ## Latest Development — 1.1.3-rc.1
 
-The latest local
+The latest local candidate addresses a concurrency issue involving Lodestone and AttributesLib.
+
+The fix synchronizes a short affected callback while preserving the existing tooltip behavior.
+
+**Recorded validation results:**
+
+| Verification | Result |
+| --- | --- |
+| Concurrent calls | 192,000 |
+| Previous candidate: null-pointer errors | 329 |
+| New candidate: null-pointer errors | 0 |
+| Previous candidate: attribute misclassifications | 596 |
+| New candidate: attribute misclassifications | 0 |
+| New checks | 31/31 passed |
+| Existing compatibility-gate checks | 70/70 passed |
+| Independent source rebuild | Byte-identical JAR |
+
+These results are based on the local candidate's recorded validation. They do not represent complete real-game or long-term acceptance.
+
+## Compatibility and Known Limitations
+
+HR Fixes is designed for Minecraft 1.20.1 on Forge.
+
+Previous candidates completed focused client checks on Forge 47.4.16 and 47.4.22. These results do not automatically qualify every new candidate on both versions.
+
+For `1.1.3-rc.1`, the following remain unverified:
+
+- Complete FastJEI interaction and in-game tooltip behavior.
+- New-candidate runtime testing on Forge 47.4.16.
+- Dedicated-server compatibility and long-term gameplay stability.
+- Complete Hollow Realm modpack compatibility.
+
+A previously identified Goety Ominous dedicated-server failure involving client-only class loading is a separate third-party defect and is not claimed to be fixed by HR Fixes.
+
+**Full Hollow Realm dedicated-server support is not currently qualified.**
+
+## Development Principles
+
+HR Fixes follows a focused maintenance approach:
+
+1. Investigate real and reproducible problems.
+2. Confirm the root cause before introducing patches.
+3. Prefer the smallest safe fix.
+4. Preserve existing functionality and optional-mod compatibility.
+5. Test affected behavior and relevant regressions.
+6. Document unsupported configurations and remaining limitations.
+
+Configuration, recipe, data-pack, and KubeJS fixes remain in their appropriate maintenance layers unless there is a clear technical reason to move them into HR Fixes.
+
+## Installation and Releases
+
+Only use builds published or explicitly provided by the project maintainer.
+
+Before replacing a build, close the Minecraft client or server and ensure that only one HR Fixes JAR is installed.
+
+Development candidates, source archives, and rollback copies are not automatically public releases.
+
+**Repository:** https://github.com/WinKing114/HR-Fixes
+
+---
+
+HR Fixes is an independent compatibility project maintained for the Hollow Realm modpack. Compatibility is verified for documented environments only; broader support is not implied.
