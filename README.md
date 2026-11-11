@@ -1,112 +1,47 @@
 # HR Fixes
 
-**Targeted compatibility and bug fixes for the Hollow Realm modpack**
+A Minecraft Forge mod with targeted compatibility and bug fixes for the Hollow Realm modpack.
 
-[![Release](https://img.shields.io/badge/release-1.2.0-blue)](https://github.com/WinKing114/HR-Fixes/releases)
-[![Minecraft](https://img.shields.io/badge/minecraft-1.20.1-green)](https://www.minecraft.net/)
-[![Forge](https://img.shields.io/badge/forge-47.4.16%2B-orange)](https://files.minecraftforge.net/)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
+## Project status
 
-HR Fixes is a small Forge mod maintained for the **Hollow Realm** modpack. It fixes reproducible
-conflicts, crashes and lifecycle bugs in third-party mods with narrowly scoped Mixin patches,
-instead of changing gameplay values, recipes, quests or world data.
+The source currently available in this repository is **HR Fixes 1.1.0**, targeting **Minecraft 1.20.1 and Forge 47.4.16**. Its mod ID is `hollowrealm_performance_compat`. There is currently no published GitHub release.
 
-- **Minecraft:** 1.20.1
-- **Forge:** `[47.4.16, 48)`
-- **Mod ID:** `hollowrealm_performance_compat`
-- **Java:** 17 bytecode
-- **Current release:** `1.2.0`
+An earlier version of this README described 1.2.0, but its referenced source and reports are not present on the current default branch. The earlier text remains available in [Git history](https://github.com/WinKing114/HR-Fixes/blob/d0b21db540a5be088cd4ef6069a0d9e373802b81/README.md). Do not assume its version, patch list or test results describe the 1.1.0 source.
 
-## Patches
+## Fixes
 
-Every patch is optional and version-gated: it only runs on the exact third-party build it was
-audited against, and it fails closed (logs why and skips) when a target is missing or changed.
+The 1.1.0 source contains targeted patches for:
 
-| Patch | Target | Problem it fixes |
-| --- | --- | --- |
-| `AttachmentClientMixin` | Eternal Starlight 0.9.0 | Client attachment packet handles a null sender |
-| `ZealotWorldgenRandomMixin` | Goety Ominous 3.0.0.fix-1.20.1 | Off-thread `Level.random` use during worldgen |
-| `SorcererWorldgenRandomMixin` | Goety Awaken 1.3.9.4 | Same class of bug (mod not installed in the current pack) |
-| `QuestPanelLifecycleMixin` | FTB Quests 2001.4.22 + Quest Enhance 3.13/3.14 | Null quest dereference in an empty quest panel |
-| `ApotheosisJeiMixin` | Apotheosis 7.4.8 + JEI 15.56.0.205 | Missing socketing category extension |
-| `SocketingJeiLayoutMixin` | JEI 15.56.0.205 | Focus links for socketing recipes in the smithing display |
-| `LodestoneTooltipMixin` | Lodestone 1.20.1-1.6.4.1 + AttributesLib 1.3.7 | Concurrent tooltip callback race |
-| `KubeJsAttackCacheMixin` | L2 Hostility 2.5.19 + L2 Damage Tracker 0.4.4 | `ConcurrentModificationException` aborts mod loading |
-| `ChatLineHeightGuardMixin` | Minecraft 1.20.1 | Chat panel divides by zero every frame |
-| `structurify_overlap_gate` (CoreMod) | CoO 4.6/5.5/6.5 + Structurify 2.0.42/2.0.43 | CoO's Structurify overlap Mixin on incompatible builds |
+- Eternal Starlight attachment synchronization.
+- Structurify and Collections of Optimizations compatibility.
+- Goety world-generation random access.
+- The FTB Quests and Quest Enhance empty quest panel.
+- Apotheosis socketing displays in JEI.
 
-## How patches are gated
-
-Each patch checks, at Mixin preparation time:
-
-1. the installed mod version is in the audited list,
-2. the original target class bytes have the expected shape (method, field, local-variable layout
-   or SHA-256 fingerprint), and
-3. the audited fix still applies to that shape.
-
-If any check fails the patch is skipped with a logged reason — a missing or newer third-party mod
-never blocks loading, and a changed target never crashes the game. `latest.log` reports `APPLY` /
-`SKIP` for gate decisions and `MERGED` when this mod's `postApply` actually ran for a target.
+These patches are intended for specific dependency versions. See the [1.1.0 project metadata](quality/2026-10-10-performance/project.json) and [validation report](quality/2026-10-10-performance/RELEASE-1.1.0.md) before use. A separate KubeJS data correction is included under `overrides/`; it is not part of the mod JAR.
 
 ## Installation
 
-1. Close Minecraft.
-2. Put **one** HR Fixes JAR into `mods/` — never two files with mod ID `hollowrealm_performance_compat`.
-3. Start the game and check `latest.log` for `HR Fixes loaded` plus the `APPLY`/`SKIP` lines.
+Use only a build appropriate for the target modpack and dependency versions. Close Minecraft before replacing the JAR, and keep only one JAR with the `hollowrealm_performance_compat` mod ID in `mods/`. Check the [validation report](quality/2026-10-10-performance/RELEASE-1.1.0.md) for version-specific installation and rollback limits.
 
-No world, NBT, KubeJS or other mod files are modified. To roll back, delete the JAR and restore the
-previous one.
+## Building
 
-## Compatibility
-
-Audited optional targets: Eternal Starlight 0.9.0, Goety Ominous 3.0.0.fix-1.20.1, Goety Awaken
-1.3.9.4, FTB Quests 2001.4.22, Quest Enhance 1.20.1-forge-3.13/3.14, Apotheosis 7.4.8, JEI
-15.56.0.205, Lodestone 1.20.1-1.6.4.1, AttributesLib 1.3.7, Collections Of Optimizations
-4.6/5.5/6.5, Structurify 2.0.42/2.0.43, L2 Hostility 2.5.19, L2 Damage Tracker 0.4.4.
-
-Forge metadata declares only Minecraft and Forge as required dependencies. Optional targets are
-checked at runtime; a missing or newer mod only disables that one patch.
+See the [build instructions](quality/2026-10-10-performance/BUILD.md) for the required JDK, libraries and audited compile dependencies.
 
 ## Verification
 
-Release 1.2.0 was validated with:
+The 1.1.0 report records targeted checks in an isolated single-player client and integrated server, including quest, JEI and attachment interactions. It also records an independent source rebuild. Dedicated servers, multiplayer, long-term play and the author's existing world were not tested. These historical results do not establish compatibility for other builds or mod combinations.
 
-| Check | Result |
-| --- | --- |
-| Binary gate assertions (real target bytes + real installed metadata) | 74 / 74 |
-| Release JAR structure (classes, resources, mixin sides, CoreMod wiring) | 26 / 26 |
-| Broken-JAR negative controls | 6 / 6 |
-| JVM race assertions on the real L2 classes | 7 / 7 |
-| Isolated real Forge 47.4.22 client transformation checks | 8 / 8 |
-| Independent rebuild from the published source package | identical SHA-256 |
+See the [validation report](quality/2026-10-10-performance/RELEASE-1.1.0.md) and [evidence](quality/2026-10-10-performance/evidence/compat-20261012.json) for the tested environment and limitations. No FPS, TPS or memory improvement is claimed.
 
-**Not verified:** full-pack gameplay, in-game quest/JEI interaction, dedicated servers, multiplayer
-and long-term stability. No FPS, TPS or memory improvement is claimed.
+## Documentation
 
-## Project layout
-
-```
-quality/<date>-<version>/   release source tree, report, evidence and metadata per version
-.code/performance/          build, gate, race, packaging and native transformation tools
-docs/archive/               historical README snapshots
-CHANGELOG.md                release history
-```
-
-Each version directory contains its own `README.md`, `RELEASE-*.md`, `COMPATIBILITY.md`, `AUDIT.md`,
-`BUILD.md` and `evidence/` so a published build can be reproduced and audited later.
-
-## Links
-
-- [Changelog](CHANGELOG.md)
-- [1.2.0 release notes](quality/2026-11-03-1.2.0/RELEASE-1.2.0.md)
-- [Compatibility and version boundaries](quality/2026-11-03-1.2.0/COMPATIBILITY.md)
-- [Bytecode audit](quality/2026-11-03-1.2.0/AUDIT.md)
-- [Build and verification](quality/2026-11-03-1.2.0/BUILD.md)
-- [October 24, 2026 README snapshot](docs/archive/README-2026-10-24-1.1.3-rc.1.md)
+- [Changelog](quality/2026-10-10-performance/CHANGELOG.md)
+- [Compatibility notes](quality/2026-10-10-performance/COMPATIBILITY.md)
+- [Build instructions](quality/2026-10-10-performance/BUILD.md)
+- [1.1.0 validation report](quality/2026-10-10-performance/RELEASE-1.1.0.md)
+- [Historical README snapshot](docs/archive/README-2026-10-24-1.1.3-rc.1.md)
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
-
-HR Fixes is an independent third-party project. It is not affiliated with Eternal Starlight, FTB,
-Apotheosis, JEI, Lodestone, L2 Hostility or the Hollow Realm modpack authors.
+[MIT](LICENSE). HR Fixes is an independent third-party project and is not affiliated with the authors of its target mods.
