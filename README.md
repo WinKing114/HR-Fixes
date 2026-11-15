@@ -1,47 +1,61 @@
-# HR Fixes
+# HollowRealm Fixes
 
-A Minecraft Forge mod with targeted compatibility and bug fixes for the Hollow Realm modpack.
+Targeted compatibility and crash fixes for the **HollowRealm** modpack, formerly **HR Fixes**.
 
-## Project status
+Minecraft **1.20.1** · **Forge** · Java **17** · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/hollowrealm-fixes) · [Issues](https://github.com/WinKing114/HR-Fixes/issues)
 
-The source currently available in this repository is **HR Fixes 1.1.0**, targeting **Minecraft 1.20.1 and Forge 47.4.16**. Its mod ID is `hollowrealm_performance_compat`. There is currently no published GitHub release.
+## Current version and downloads
 
-An earlier version of this README described 1.2.0, but its referenced source and reports are not present on the current default branch. The earlier text remains available in [Git history](https://github.com/WinKing114/HR-Fixes/blob/d0b21db540a5be088cd4ef6069a0d9e373802b81/README.md). Do not assume its version, patch list or test results describe the 1.1.0 source.
+**2.0.0 is the prepared update documented here; its renamed JAR has not yet been published to CurseForge or GitHub Releases.** CurseForge currently offers **1.2.0**. The patch list below describes **2.0.0**, not every historical download. See the [2.0.0 update notes](docs/RELEASE-2.0.0.md).
 
-## Fixes
+The repository URL remains `WinKing114/HR-Fixes` so existing links keep working. The project display name is **HollowRealm Fixes**; the internal mod ID remains `hollowrealm_performance_compat`.
 
-The 1.1.0 source contains targeted patches for:
+## Fixes in 2.0.0
 
-- Eternal Starlight attachment synchronization.
-- Structurify and Collections of Optimizations compatibility.
-- Goety world-generation random access.
-- The FTB Quests and Quest Enhance empty quest panel.
-- Apotheosis socketing displays in JEI.
+| Area | Targeted fix |
+| --- | --- |
+| L2 Hostility / KubeJS | Clear the listener cache under the attack-handler registration lock to address a cache race. |
+| Apotheosis / JEI | Register the socketing category extension and link equipment, gem and output examples in the smithing layout (two mixins). |
+| Lodestone / AttributesLib | Serialize the audited base-modifier tooltip callback to address a client-side race. |
+| Vanilla chat | Guard non-positive chat line height against division by zero. |
+| Collections of Optimizations / Structurify | Disable only the conflicting structure-overlap mixin for CoO 5.5 with Structurify 2.0.43. |
 
-These patches are intended for specific dependency versions. See the [1.1.0 project metadata](quality/2026-10-10-performance/project.json) and [validation report](quality/2026-10-10-performance/RELEASE-1.1.0.md) before use. A separate KubeJS data correction is included under `overrides/`; it is not part of the mod JAR.
+Five mixins remain, plus the version-gate plugin and the CoO/Structurify coremod workaround. Patch-specific checks use the relevant mod versions and, for the L2 cache and tooltip patches, target-class SHA-256 fingerprints. The vanilla chat patch targets Minecraft 1.20.1. Unsupported combinations are skipped rather than force-applied.
+
+`APPLY` logs report a preparation-gate decision; `MERGED` reports mixin application. Counts depend on installed targets and side. Five of each were observed in the tested HollowRealm client; that count is not a universal installation requirement.
+
+## What changed from HR Fixes
+
+2.0.0 removes the Goety Awaken and Goety Ominous worldgen patches, Eternal Starlight attachment patch, Quest Enhance 3.13/3.14 panel patch and unused `WorldgenRandom` helper. Their targets were absent or outside the audited version in the current pack. These are **not fixes supplied by 2.0.0**.
+
+The rename changes four text/resource entries. All 12 class files match the pre-rename 2.0.0 JAR byte for byte. Internal packages and `[HR Fixes/]` log names are retained.
 
 ## Installation
 
-Use only a build appropriate for the target modpack and dependency versions. Close Minecraft before replacing the JAR, and keep only one JAR with the `hollowrealm_performance_compat` mod ID in `mods/`. Check the [validation report](quality/2026-10-10-performance/RELEASE-1.1.0.md) for version-specific installation and rollback limits.
+Use a published file appropriate for your modpack and dependency versions. Close Minecraft, back up the JAR being replaced, and keep **one** file with mod ID `hollowrealm_performance_compat` in `mods/`. A renamed HollowRealm Fixes JAR replaces the old HR Fixes JAR; do not install both.
 
-## Building
+Metadata permits Forge `[47.4.16,48)` with Minecraft `[1.20.1]`. **2.0.0 loading was checked on Forge 47.4.29 / Java 17**; the entire permitted Forge range has not been tested. Fabric, NeoForge, other Minecraft versions, dedicated servers and multiplayer are not validated for this update.
 
-See the [build instructions](quality/2026-10-10-performance/BUILD.md) for the required JDK, libraries and audited compile dependencies.
+## Scope
 
-## Verification
+This mod contains compatibility fixes. Modpack-specific recipes, loot, quests, shops, economy, difficulty and localisation belong to a separate planned tweak mod. The prepared 2.0.0 JAR does not bundle those data repairs or instance configuration changes.
 
-The 1.1.0 report records targeted checks in an isolated single-player client and integrated server, including quest, JEI and attachment interactions. It also records an independent source rebuild. Dedicated servers, multiplayer, long-term play and the author's existing world were not tested. These historical results do not establish compatibility for other builds or mod combinations.
+No measured FPS, TPS or memory improvement is claimed.
 
-See the [validation report](quality/2026-10-10-performance/RELEASE-1.1.0.md) and [evidence](quality/2026-10-10-performance/evidence/compat-20261012.json) for the tested environment and limitations. No FPS, TPS or memory improvement is claimed.
+## Verification and source availability
+
+[2.0.0 verification notes](docs/VERIFICATION-2.0.0.md) distinguish file checks, loading and untested gameplay. The renamed JAR passed file/metadata checks and an isolated Forge 47.4.29 client load with five APPLY and five MERGED decisions. **Per-feature behaviour, complete gameplay flows, player experience, dedicated servers and multiplayer remain untested for this build.**
+
+The Java source currently in [quality/2026-10-10-performance](quality/2026-10-10-performance) is historical **1.1.0**, not the source of 2.0.0. The local 2.0.0 packaging process retained class files from the 1.2.0 binary; matching 1.2.0/2.0.0 Java source is not present in this repository. The historical build instructions do not reproduce 2.0.0. Do not treat the old test reports as current-version certification.
 
 ## Documentation
 
-- [Changelog](quality/2026-10-10-performance/CHANGELOG.md)
-- [Compatibility notes](quality/2026-10-10-performance/COMPATIBILITY.md)
-- [Build instructions](quality/2026-10-10-performance/BUILD.md)
-- [1.1.0 validation report](quality/2026-10-10-performance/RELEASE-1.1.0.md)
-- [Historical README snapshot](docs/archive/README-2026-10-24-1.1.3-rc.1.md)
+- [Changelog](CHANGELOG.md)
+- [2.0.0 update notes](docs/RELEASE-2.0.0.md)
+- [2.0.0 verification and artifact identity](docs/VERIFICATION-2.0.0.md)
+- [CurseForge description](docs/CURSEFORGE.md)
+- [Historical 1.1.0 validation report](quality/2026-10-10-performance/RELEASE-1.1.0.md)
 
 ## License
 
-[MIT](LICENSE). HR Fixes is an independent third-party project and is not affiliated with the authors of its target mods.
+[MIT](LICENSE). Independent third-party project; not affiliated with the authors of the patched mods.

@@ -1,3 +1,5 @@
+> Historical HR Fixes 1.1.0 documentation. The current project name is **HollowRealm Fixes**. This file does not describe 2.0.0; see the [current README](../../README.md) and [2.0.0 notes](../../docs/RELEASE-2.0.0.md).
+
 # CurseForge file handoff — HR Fixes 1.1.0
 
 Upload to the existing **HR Fixes** project, **1736729**. The owner will upload this file; no automated CurseForge submission is made in this task. Confirm in the author dashboard that this display version is unused before submitting.

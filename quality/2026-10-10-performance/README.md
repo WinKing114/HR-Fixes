@@ -1,3 +1,5 @@
+> Historical HR Fixes 1.1.0 documentation. The current project name is **HollowRealm Fixes**. This file does not describe 2.0.0; see the [current README](../../README.md) and [2.0.0 notes](../../docs/RELEASE-2.0.0.md).
+
 # HR Fixes
 
 Targeted compatibility and bug fixes for the Hollow Realm modpack.
