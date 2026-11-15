@@ -1,6 +1,6 @@
 # 2.0.0 verification and artifact identity
 
-Documentation checked on 2026-11-15. This is a summary of existing local evidence, not a new gameplay test or a published binary release.
+Documentation checked on 2026-11-15. This is a summary of artifact checks and existing loading evidence, not a new gameplay test.
 
 | Artifact | Bytes | SHA-256 |
 | --- | ---: | --- |
@@ -32,7 +32,7 @@ Each has a corresponding MERGED record. Preparation decisions and merges alone d
 
 ## Availability and reproducibility
 
-The renamed 2.0.0 artifact is prepared locally; no 2.0.0 binary is uploaded by this documentation update. CurseForge's existing 1.2.0 download retains its own identity and history.
+The renamed 2.0.0 artifact is the upload candidate for this release. Files and their review/publication status are listed on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/hollowrealm-fixes/files/all) and [GitHub Releases](https://github.com/WinKing114/HR-Fixes/releases). Historical downloads retain their original binary identity.
 
 The repository contains historical 1.1.0 Java source. The local 2.0.0 packaging copied class files from the 1.2.0 binary and did not recompile Java. Matching Java source for those retained classes is not available here. No claim is made that the old source or historical build script reproduces 2.0.0.
 

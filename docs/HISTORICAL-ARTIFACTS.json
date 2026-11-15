@@ -1,0 +1,61 @@
+{
+  "description": "Published original files; display names/changelogs updated without replacing binaries.",
+  "artifacts": [
+    {
+      "version": "1.2.0",
+      "file": "hr-fixes-1.2.0.jar",
+      "bytes": 30709,
+      "sha256": "6dc26d690859f147a8f4383e03ebb358e61d7e5162506f78de5c0d44a08c2b74",
+      "curseforgeFile": "9423453",
+      "embeddedVersion": "1.2.0"
+    },
+    {
+      "version": "1.1.4",
+      "file": "hr-fixes-1.1.4.jar",
+      "bytes": 26321,
+      "sha256": "ca89b12e45e171e2378dc11dc6fb2a19662eac801743d05d36bba76631f16af1",
+      "curseforgeFile": "9387542",
+      "embeddedVersion": "1.1.4"
+    },
+    {
+      "version": "1.1.3-rc.1",
+      "file": "hr-fixes-1.1.3-rc.1.jar",
+      "bytes": 19714,
+      "sha256": "b0f807d0fcdbc54c7c93375d542132aa44e317ef1bee5411f43dd4190602e595",
+      "curseforgeFile": "9307690",
+      "embeddedVersion": "1.1.3-rc.1"
+    },
+    {
+      "version": "1.1.2-rc.1",
+      "file": "hr-fixes-1.1.2-rc.1.jar",
+      "bytes": 17893,
+      "sha256": "0a10e204ec257e92bc0f2184e6d1e07bdc3389de281b221e1d7d7d4d9786e3a6",
+      "curseforgeFile": "9237950",
+      "embeddedVersion": "1.1.2-rc.1"
+    },
+    {
+      "version": "1.1.1-rc.1",
+      "file": "hr-fixes-1.1.1-rc.1.jar",
+      "bytes": 17342,
+      "sha256": "0b272bbf80fcd5a0ac99ba90f156752cb362bc5ce07432531ad0829b32bedd8f",
+      "curseforgeFile": "9159195",
+      "embeddedVersion": "1.1.1-rc.1"
+    },
+    {
+      "version": "1.1.0",
+      "file": "hr-fixes-1.1.0.jar",
+      "bytes": 14042,
+      "sha256": "5e54a04932690473aaeee5e49c9383c579580ec243ffb34b97a069c0d17593cc",
+      "curseforgeFile": "9148335",
+      "embeddedVersion": "1.1.0"
+    },
+    {
+      "version": "1.0.0-rc.1",
+      "file": "hr-fixes-1.0.0-rc.1.jar",
+      "bytes": 6710,
+      "sha256": "5ed8d8b561cb86a5f82dffdf25aacd22dfa16b39bb0a25ce4f3c61946071faa0",
+      "curseforgeFile": "9127662",
+      "embeddedVersion": "1.1.0-rc.1"
+    }
+  ]
+}
