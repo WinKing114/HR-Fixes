@@ -12,14 +12,14 @@ All notable changes to **HollowRealm Fixes** (formerly **HR Fixes**, mod ID `hol
 - Added `ChatLineHeightGuard` helper and `HRFixesMixinPluginTest` / `SocketingJeiCacheBenchmarkTest` / `ChatLineHeightGuardTest` unit & benchmark coverage against real installed mod bytecode.
 
 ### Changed
-- **Performance (`SocketingJeiExtension`)**: Short-circuit `ClientLevel == null` before copying registries or creating `ItemStack`s; replaced 5 unsynchronized mutable fields with an immutable `volatile SnapshotCache` that pre-splits `bases`, `gems`, and `outputs` and verifies registry snapshots without per-call `List.copyOf` or stream copying (measured **25.23x** faster cache-hit slot pass in final-build JUnit micro-benchmark: `108.745 ms` → `4.311 ms` over 20,000 iterations / 240 entries).
+- **Performance (`SocketingJeiExtension`)**: Short-circuit `ClientLevel == null` before copying registries or creating `ItemStack`s; replaced 5 unsynchronized mutable fields with an immutable `volatile SnapshotCache` that pre-splits `bases`, `gems`, and `outputs` and verifies registry snapshots without per-call `List.copyOf` or stream copying (measured **20.64x** faster cache-hit slot pass in final-build JUnit micro-benchmark: `106.208 ms` → `5.146 ms` over 20,000 iterations / 240 entries).
 - **Code cleanup (`HRFixesMixinPlugin`)**: Removed dead 1.x constants, switch cases, and unused helper methods for removed/unaudited mods (`goetyawaken`, `goetyominous`, `eternal_starlight`, `quest_enhance`); de-duplicated `APPLY`/`SKIP` decision logging via lock-free `putIfAbsent`.
 - **Metadata (`hr-fixes-manifest.json`, `mods.toml`, `PerformanceCompat`)**: Fixed erroneous gate descriptions for `l2_kubejs_listener_cache` (now accurately `L2HOSTILITY + L2DAMAGETRACKER + SHA-256 + shape`) and `socketing_jei_layout` (now accurately `APOTHEOSIS + JEI + signature + locals`), updated manifest `source` to Java 17 source compilation, and unified README / CurseForge docs.
 
 ### Fixed
 - Closed `ChatLineHeightGuardMixin` divide-by-zero edge cases for line spacings in `(-1.0, -8/9)` (e.g., `-0.95` where `(int)(9 * (spacing + 1)) == 0`), `Double.NaN`, and `±Infinity` by validating `(int)(9.0 * (spacing + 1.0)) < 1` and `!Double.isFinite(spacing)`.
 
-[Verification notes](docs/VERIFICATION-2.0.1.md) · [Release notes](docs/RELEASE-2.0.1.md)
+[CurseForge file `9703293`](https://www.curseforge.com/minecraft/mc-mods/hollowrealm-fixes/files/9703293) · [GitHub tag `v2.0.1`](https://github.com/WinKing114/HR-Fixes/releases/tag/v2.0.1) · [Verification notes](docs/VERIFICATION-2.0.1.md) · [Release notes](docs/RELEASE-2.0.1.md)
 
 ---
 

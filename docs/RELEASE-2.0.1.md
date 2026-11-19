@@ -5,7 +5,7 @@
 - **Rebuilt from clean Java 17 source**: Restored full Java 17 source (`src/main/java`), JUnit 5 test suite (`src/test/java`), and reproducible build verification (`build.py`).
 - **Chat line-height guard fix (`ChatLineHeightGuardMixin`)**: Closed divide-by-zero edge cases for line spacings where `(int)(9.0 * (spacing + 1.0)) < 1` (e.g. `-0.95`) and non-finite `Double` values (`NaN`, `±Infinity`), while keeping valid spacings untouched.
 - **Apotheosis adventure guard (`ApotheosisJeiMixin`)**: Respects `Apotheosis.enableAdventure` before registering the JEI socketing extension.
-- **JEI socketing cache optimization (`SocketingJeiExtension`)**: Skips `ClientLevel == null` before reading registries or creating stacks, replaces 5 unsynchronized mutable fields with a thread-safe `volatile SnapshotCache`, and eliminates per-slot `List.copyOf` / stream copies (measured **25.23x** faster cache-hit slot pass in JUnit benchmark).
+- **JEI socketing cache optimization (`SocketingJeiExtension`)**: Skips `ClientLevel == null` before reading registries or creating stacks, replaces 5 unsynchronized mutable fields with a thread-safe `volatile SnapshotCache`, and eliminates per-slot `List.copyOf` / stream copies (measured **20.64x** faster cache-hit slot pass in JUnit benchmark).
 - **Dead-code & metadata cleanup (`HRFixesMixinPlugin`, `hr-fixes-manifest.json`)**: Removed unused 1.x constants/branches/helpers left over from 1.2.0, de-duplicated `APPLY`/`SKIP` logging, and corrected manifest gate descriptions for `l2_kubejs_listener_cache` and `socketing_jei_layout`.
 
 ## Compatibility

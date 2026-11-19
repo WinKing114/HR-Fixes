@@ -10,7 +10,7 @@
 
 **HollowRealm Fixes** (formerly **HR Fixes**) is a lightweight code-level compatibility and bug-fix mod built for the **HollowRealm** modpack on **Minecraft 1.20.1 (Forge)**. It fixes confirmed crashes, thread-safety bugs, and broken UI/JEI integrations using version- and bytecode-gated Java/Mixin patches—without changing gameplay balance, recipes, quests, or progression.
 
-Install this mod if you are playing HollowRealm (or running the same audited mod versions) and want silent, fail-closed fixes for vanilla and cross-mod defects. Data-pack and recipe/loot condition fixes live separately in **[HollowRealm Tweaks](https://github.com/WinKing114/HollowRealm-Tweaks)**.
+Install this mod if you are playing HollowRealm (or running the same audited mod versions) and want silent, fail-closed fixes for vanilla and cross-mod defects. Data-pack and recipe/loot condition fixes live separately in **[HollowRealm Tweaks](https://www.curseforge.com/minecraft/mc-mods/hollowrealm-tweaks)**.
 
 ---
 
@@ -38,7 +38,7 @@ HollowRealm's custom maintenance is split cleanly into two complementary mods wi
 | Mod | Layer | What It Solves | Side / Multiplayer |
 | :--- | :--- | :--- | :--- |
 | **HollowRealm Fixes** (`hollowrealm_performance_compat`) | **Code & Mixin** | Crashes, concurrency races, JEI socketing extension, CoO/Structurify coremod gate | `BOTH` (`IGNORE_SERVER_VERSION`) |
-| **[HollowRealm Tweaks](https://github.com/WinKing114/HollowRealm-Tweaks)** (`hollowrealm_tweaks`) | **In-Memory Server Data** | Broken clam GLM condition IDs, shadowed annihilation bottle recipe, optional Scguns affix conditions | `BOTH` (`IGNORE_ALL_VERSION`) |
+| **[HollowRealm Tweaks](https://www.curseforge.com/minecraft/mc-mods/hollowrealm-tweaks)** (`hollowrealm_tweaks`) | **In-Memory Server Data** | Broken clam GLM condition IDs, shadowed annihilation bottle recipe, optional Scguns affix conditions | `BOTH` (`IGNORE_ALL_VERSION`) |
 
 Both mods are designed and verified to work together cleanly when co-installed.
 
@@ -55,7 +55,7 @@ Both mods are designed and verified to work together cleanly when co-installed.
 
 ## 📦 Related Projects
 
-- **[HollowRealm Tweaks](https://github.com/WinKing114/HollowRealm-Tweaks)** — Companion high-priority `SERVER_DATA` compatibility mod for HollowRealm (`0.2.1`), repairing clam loot conditions, the annihilation bottle recipe, and optional Scguns gun affixes.
+- **[HollowRealm Tweaks](https://www.curseforge.com/minecraft/mc-mods/hollowrealm-tweaks)** ([GitHub](https://github.com/WinKing114/HollowRealm-Tweaks)) — Companion high-priority `SERVER_DATA` compatibility mod for HollowRealm (`0.2.1`), repairing clam loot conditions, the annihilation bottle recipe, and optional Scguns gun affixes.
 - **[CrosshairBobbing Fixed](https://www.curseforge.com/minecraft/mc-mods/crosshairbobbing-fixed)** ([GitHub](https://github.com/WinKing114/CrosshairBobbing-Fixed)) — Keeps your crosshair bobbing smoothly with view movement and playing action animations (walking, attacking, breaking blocks, charging bows/tridents/crossbows, eating, and drinking) while fixing Quilt/loader startup crashes and isolating Forge 1.20.x HUD matrix transforms so health bars and hotbars stay put.  
   *Attribution: Unofficial bug-fix fork of **Crosshair Bobbing** by **Krash220** — official original project on [CurseForge (`xbob`)](https://www.curseforge.com/minecraft/mc-mods/xbob) · [Modrinth (`xbob`)](https://modrinth.com/mod/xbob) · [GitHub (`Krash220/CrosshairBobbingMod`)](https://github.com/Krash220/CrosshairBobbingMod).*
 
