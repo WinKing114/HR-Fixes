@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "modId": "hollowrealm_performance_compat",
+  "displayName": "HollowRealm Fixes",
+  "formerName": "HR Fixes",
+  "version": "2.0.1",
+  "note": "Machine-readable fix ledger; each live patch is independently gated by HRFixesMixinPlugin.",
+  "source": "compiled from src/main/java (Java 17)",
+  "livePatches": [
+    {
+      "id": "l2_kubejs_listener_cache",
+      "mixin": "KubeJsAttackCacheMixin",
+      "target": "dev.xkmc.l2hostility.compat.kubejs.LHKJSPlugin",
+      "side": "common",
+      "gate": "L2HOSTILITY + L2DAMAGETRACKER + L2_KUBEJS_PLUGIN SHA-256 + L2_ATTACK_EVENT_HANDLER SHA-256 + bytecode shape",
+      "fixes": "L2 Hostility KubeJS listener cache clear under the AttackEventHandler registration lock"
+    },
+    {
+      "id": "apotheosis_socketing_jei",
+      "mixin": "ApotheosisJeiMixin",
+      "target": "dev.shadowsoffire.apotheosis.adventure.compat.AdventureJEIPlugin",
+      "side": "client",
+      "gate": "APOTHEOSIS + JEI + plugin method absence check",
+      "fixes": "register socketing recipe JEI category extension when Apotheosis adventure module is enabled"
+    },
+    {
+      "id": "socketing_jei_layout",
+      "mixin": "SocketingJeiLayoutMixin",
+      "target": "mezz.jei.library.plugins.vanilla.anvil.SmithingRecipeCategory",
+      "side": "client",
+      "gate": "APOTHEOSIS + JEI + setRecipe signature + local variable layout",
+      "fixes": "link socketing example slots in smithing recipe layout"
+    },
+    {
+      "id": "lodestone_tooltip",
+      "mixin": "LodestoneTooltipMixin",
+      "target": "dev.shadowsoffire.attributeslib.client.AttributesLibClient",
+      "side": "client",
+      "gate": "LODESTONE + ATTRIBUTESLIB + TOOLTIP_CLASS_SHA256 + LODESTONE_MIXIN_CLASS_SHA256",
+      "fixes": "serialize audited Lodestone/AttributesLib base-modifier callback"
+    },
+    {
+      "id": "chat_line_height",
+      "mixin": "ChatLineHeightGuardMixin",
+      "target": "net.minecraft.client.gui.components.ChatComponent",
+      "side": "client",
+      "gate": "vanilla ChatComponent render and line-height bytecode shape",
+      "fixes": "guard chat line-height divide-by-zero for non-finite values and line spacing where (int)(9 * (spacing + 1)) < 1"
+    }
+  ],
+  "systemPatches": [
+    {
+      "id": "version_gate_plugin",
+      "component": "hollowrealm.performance.HRFixesMixinPlugin",
+      "fixes": "version + SHA-256 fingerprint gates and APPLY/SKIP decision logging"
+    },
+    {
+      "id": "coo_structurify_overlap",
+      "component": "coremods/structurify_overlap_gate.js",
+      "fixes": "disable CoO 5.5 Structurify overlap mixin for Structurify 2.0.42/2.0.43"
+    }
+  ],
+  "scope": "code-level compatibility and crash fixes; data-layer compatibility lives in HollowRealm Tweaks"
+}

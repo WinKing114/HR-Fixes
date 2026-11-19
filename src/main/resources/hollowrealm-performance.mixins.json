@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "hollowrealm.performance.mixin",
+  "plugin": "hollowrealm.performance.HRFixesMixinPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "KubeJsAttackCacheMixin"
+  ],
+  "client": [
+    "ApotheosisJeiMixin",
+    "SocketingJeiLayoutMixin",
+    "LodestoneTooltipMixin",
+    "ChatLineHeightGuardMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

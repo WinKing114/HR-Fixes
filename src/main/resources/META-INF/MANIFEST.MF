@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+MixinConfigs: hollowrealm-performance.mixins.json
+Implementation-Title: HollowRealm Fixes
+Implementation-Version: 2.0.1

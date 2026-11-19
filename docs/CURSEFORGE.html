@@ -1,0 +1,55 @@
+<p style="text-align:center;">
+  <img src="https://img.shields.io/badge/Minecraft-1.20.1-5b9c51?style=for-the-badge" alt="Minecraft 1.20.1" />
+  <img src="https://img.shields.io/badge/Forge-47.4.x-5b9c51?style=for-the-badge" alt="Forge 47.4.x" />
+  <img src="https://img.shields.io/badge/Java-17-5b9c51?style=for-the-badge" alt="Java 17" />
+  <a href="https://github.com/WinKing114/HR-Fixes/issues"><img src="https://img.shields.io/badge/GitHub-Issues-5b9c51?style=for-the-badge" alt="GitHub Issues" /></a>
+  <img src="https://img.shields.io/badge/License-MIT-5b9c51?style=for-the-badge" alt="MIT License" />
+</p>
+
+<p style="font-size:18px;"><strong>HollowRealm Fixes</strong> (formerly <strong>HR Fixes</strong>) is a lightweight code-level compatibility and bug-fix mod built for the <strong>HollowRealm</strong> modpack on <strong>Minecraft 1.20.1 (Forge)</strong>. It resolves confirmed crashes, concurrency races, and broken UI/JEI integrations using version- and bytecode-gated Java/Mixin patches without altering gameplay balance, recipes, quests, or progression.</p>
+
+<p style="font-size:18px;">Install this mod if you play HollowRealm (or run the same audited mod versions) and want silent, fail-closed fixes for vanilla and cross-mod issues. Data-pack and recipe/loot condition fixes live separately in <a href="https://github.com/WinKing114/HollowRealm-Tweaks" rel="nofollow">HollowRealm Tweaks</a>.</p>
+
+<h1>⚙️ What's Included</h1>
+<hr />
+<p style="font-size:18px;">Every patch runs through <code>HRFixesMixinPlugin</code> (or a guarded Forge CoreMod) and <strong>fails closed</strong>: if a target mod is absent, updated to an unaudited version, or has unexpected bytecode, that patch skips cleanly without crashing startup.</p>
+<ul>
+  <li style="font-size:18px;"><strong>Vanilla Chat Line-Height Crash Guard:</strong> Prevents divide-by-zero crashes in <code>ChatComponent</code> when chat line spacing produces an integer line height below <code>1</code> or non-finite values (<code>NaN</code> / <code>&plusmn;Infinity</code>), falling back safely to <code>0.0</code> while keeping all valid spacing values intact.</li>
+  <li style="font-size:18px;"><strong>L2 Hostility &times; KubeJS Cache Race Fix:</strong> Synchronizes <code>LHKJSPlugin.clearCaches()</code> under <code>AttackEventHandler</code>'s registration lock to eliminate concurrent modification risks during reloads and combat listener setup.</li>
+  <li style="font-size:18px;"><strong>Lodestone &times; AttributesLib Tooltip Race Fix:</strong> Marks the audited <code>AttributesLibClient</code> base-modifier callback <code>synchronized</code>, preventing tooltip race conditions when background threads (such as FastJEI workers) build tooltips concurrently.</li>
+  <li style="font-size:18px;"><strong>Apotheosis Socketing JEI Extension:</strong> Registers <code>SocketingRecipe</code> in JEI's vanilla smithing category (respecting <code>Apotheosis.enableAdventure</code>), links focus slots, and caches immutable example lists across slot renders.</li>
+  <li style="font-size:18px;"><strong>CoO &times; Structurify Overlap Gate:</strong> Optional CoreMod disabling only Collections of Optimizations' <code>MixinStructureOverlapCheck</code> when paired with audited Structurify builds (<code>2.0.42</code> / <code>2.0.43</code>).</li>
+</ul>
+
+<h1>🎯 Fixes vs. Tweaks &mdash; Which One Do You Need?</h1>
+<hr />
+<p style="font-size:18px;">HollowRealm's custom maintenance is split cleanly into two complementary mods with zero overlapping targets:</p>
+<ul>
+  <li style="font-size:18px;"><strong>HollowRealm Fixes</strong> (<code>hollowrealm_performance_compat</code>) &mdash; <strong>Code &amp; Mixin layer</strong>: fixes crashes, thread-safety races, JEI socketing display, and the optional CoO/Structurify coremod conflict.</li>
+  <li style="font-size:18px;"><strong><a href="https://github.com/WinKing114/HollowRealm-Tweaks" rel="nofollow">HollowRealm Tweaks</a></strong> (<code>hollowrealm_tweaks</code>) &mdash; <strong>In-memory Server Data layer</strong>: repairs clam loot condition IDs, restores the shadowed annihilation bottle recipe, and gates optional Scguns affixes when Scguns is absent.</li>
+</ul>
+<p style="font-size:18px;">Both mods are designed and verified to run together safely.</p>
+
+<h1>📋 Requirements &amp; Compatibility</h1>
+<hr />
+<ul>
+  <li style="font-size:18px;"><strong>Environment:</strong> Minecraft <strong>1.20.1</strong> &middot; Forge <code>[47.4.16, 48)</code> (verified on Forge <strong>47.4.29</strong>) &middot; <strong>Java 17</strong>.</li>
+  <li style="font-size:18px;"><strong>Multiplayer / Side:</strong> Uses <code>IGNORE_SERVER_VERSION</code>; safe for client or server installations matching your pack setup.</li>
+  <li style="font-size:18px;"><strong>Optional Target Mods:</strong> All patched mods (Apotheosis <code>7.4.8</code>, JEI <code>15.56.0.205</code>, Lodestone <code>1.20.1-1.6.4.1</code>, ApothicAttributes <code>1.3.7</code>, L2 Hostility <code>2.5.19</code>, L2 DamageTracker <code>0.4.4</code>, CoO <code>4.6/5.5/6.5</code>, Structurify <code>2.0.42/2.0.43</code>) are optional and independently gated.</li>
+  <li style="font-size:18px;"><strong>Single-JAR Rule:</strong> Keep only <strong>one</strong> JAR with mod ID <code>hollowrealm_performance_compat</code> installed. Remove legacy <code>hr-fixes-*.jar</code> files when upgrading.</li>
+</ul>
+
+<h1>📦 Related Projects</h1>
+<hr />
+<ul>
+  <li style="font-size:18px;"><a href="https://github.com/WinKing114/HollowRealm-Tweaks" rel="nofollow"><strong>HollowRealm Tweaks</strong></a> &mdash; Companion high-priority <code>SERVER_DATA</code> compatibility mod for HollowRealm (<code>0.2.1</code>).</li>
+  <li style="font-size:18px;"><a href="https://www.curseforge.com/minecraft/mc-mods/crosshairbobbing-fixed" rel="nofollow"><strong>CrosshairBobbing Fixed</strong></a> (<a href="https://github.com/WinKing114/CrosshairBobbing-Fixed" rel="nofollow">GitHub</a>) &mdash; Keeps crosshair view bobbing and action animations (walking, attacking, breaking blocks, charging, eating, and drinking) while fixing Quilt/loader startup crashes and Forge 1.20.x HUD transform glitches.<br /><em>Original mod attribution: Unofficial bug-fix fork of <strong>Crosshair Bobbing</strong> by <strong>Krash220</strong> (<a href="https://www.curseforge.com/minecraft/mc-mods/xbob" rel="nofollow">CurseForge</a> &middot; <a href="https://modrinth.com/mod/xbob" rel="nofollow">Modrinth</a> &middot; <a href="https://github.com/Krash220/CrosshairBobbingMod" rel="nofollow">GitHub</a>).</em></li>
+</ul>
+
+<h1>💬 Feedback &amp; Issue Reporting</h1>
+<hr />
+<p style="font-size:18px;">View version-by-version changes in the <a href="https://github.com/WinKing114/HR-Fixes/blob/main/CHANGELOG.md" rel="nofollow">Changelog</a> or check released binaries on <a href="https://github.com/WinKing114/HR-Fixes/releases" rel="nofollow">GitHub Releases</a>. Found a bug or need support for an updated mod version? Open an issue on <a href="https://github.com/WinKing114/HR-Fixes/issues" rel="nofollow">GitHub Issues</a> with your <code>latest.log</code> / <code>debug.log</code>, Forge version, and target mod versions.</p>
+
+<h1>📜 License &amp; Credits</h1>
+<hr />
+<p style="font-size:18px;">Licensed under the <strong>MIT License</strong> (see <a href="https://github.com/WinKing114/HR-Fixes/blob/main/LICENSE" rel="nofollow">LICENSE</a> in the repository and JAR). Independent third-party compatibility project, not affiliated with the authors of the patched mods.</p>

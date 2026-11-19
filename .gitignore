@@ -4,4 +4,7 @@ __pycache__/
 *.class
 *.jar
 *.zip
+build/
+dist/
+logs/
 quality/2026-10-10-performance/release/
